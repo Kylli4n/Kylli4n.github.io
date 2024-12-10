@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
+    <title>Projets et Caractéristiques</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #0d0d0d;
+            border-bottom: 2px solid #ff00ff;
+        }
+        .navbar img {
+            height: 50px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+        .navbar ul li a.active {
+            color: red;
+        }
+        .navbar ul li a i {
+            margin-right: 5px;
+        }
+        .navbar .contact {
+            border: 1px solid white;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        /* Section - Mes Projets */
+        .projects-container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .text-section {
+            flex: 1;
+            padding: 20px;
+            background-color: #2c2c2c;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .text-section h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .text-section p {
+            font-size: 18px;
+            color: #a0a0a0;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000000;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Section - Caractéristiques */
+        .features-container {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .features-container h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .features-container hr {
+            width: 50px;
+            border: 2px solid #ffffff;
+            margin: 0 auto 50px;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .feature {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+        }
+        .feature img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .feature h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .feature .button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .feature .button:hover {
+            background-color: #ff4a4a;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            margin-top: 20px;
+        }
+        .footer p {
+            margin: 0;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img alt="Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" />
+        <ul>
+            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html">Profil perso</a></li>
+            <li><a href="BtsSio.html">BTS SIO</a></li>
+            <li><a href="Competence.html">Compétences</a></li>
+            <li><a href="Projets.html">Projets</a></li>
+            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        </ul>
+        <a class="contact" href="Contact.html">Contact</a>
+    </div>
+
+    <!-- Section: Mes Projets -->
+    <div class="projects-container">
+        <div class="text-section">
+            <h1>Mes projets</h1>
+            <p>Vous trouverez les projets que j'ai faits au cours de ma formation, en activité professionnelle et personnelle.</p>
+        </div>
+        <div class="image-section">
+            <img alt="A 3D wireframe cube with a glowing effect on a black background" src="https://storage.googleapis.com/a1aa/image/NWS0eTOZ6OxfL0Ar0GWAODCe32eWjvvdaadQh7a1dIq81NSPB.jpg" />
+        </div>
+    </div>
+
+    <!-- Section: Caractéristiques -->
+    <div class="features-container">
+        <h1>Caractéristiques</h1>
+        <hr/>
+        <div class="features">
+            <div class="feature">
+                <img alt="Icon of a person in front of a computer screen" src="https://storage.googleapis.com/a1aa/image/kHHurd597P7pBdFDTJmKbWr3oMPqpspqkVf0QhbeVxa5eGpnA.jpg" />
+                <h2>Formation</h2>
+                <a href="Projet Formaltion.html" class="button">Savoir</a>
+            </div>
+            <div class="feature">
+                <img alt="Icon of a group of professionals discussing" src="https://storage.googleapis.com/a1aa/image/FUelYUCFPdynCit2OfTBmzpm3riffYtPnPbRfjs7Yy3T3bkeE.jpg" />
+                <h2>Professionnel</h2>
+                <a href="Projet professionnel.html" class="button">Savoir</a>
+            </div>
+            <div class="feature">
+                <img alt="Icon of a game controller with lightning bolts" src="https://storage.googleapis.com/a1aa/image/QIjIqZHx3T5wFx9zuP41ckkr1aLZjVAhcTyMQ6lver8bvR6JA.jpg" />
+                <h2>Personnel</h2>
+                <a href="Projet Perso.html" class="button">Savoir</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>Kyllian</span>
+        </div>
+        <a>Politique de confidentialité</a>
+        <a>Politique de cookies</a>
+        <a>Mentions légales</a>
+        <p>© 2024</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
+    <title>Kyllian-Dev</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0d0d0d;
+            color: white;
+        }
+        .content {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .content h1 {
+            font-size: 60px;
+            margin: 10px 0;
+        }
+        .content h2 {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+        .content p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .content .btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('images/fondAcceuil.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 20px;
+        }
+        .left-section h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .left-section p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .left-section button {
+            background-color: #e0e0ff;
+            color: #0000ff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .right-section {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .card i {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #4a90e2;
+        }
+        .card p {
+            font-size: 0.9em;
+            color: #b0b0b0;
+        }
+        .footer {
+            background-color: #1c1c1c;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .footer .logo i {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .footer .logo span {
+            font-size: 1.2em;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+        }
+        .footer p {
+            margin: 10px 0 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
+        <ul>
+            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html">Profil perso</a></li>
+            <li><a href="BtsSio.html">BTS SIO</a></li>
+            <li><a href="Competence.html">Compétence</a></li>
+            <li><a href="Projet.html">Projets</a></li>
+            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+            <!-- <li><a href="contactV2.html">test</a></li> -->
+        </ul>
+        <a class="contact" href="Contact.html">Contact</a>
+    </div>
+
+    <!-- Intro Content -->
+    <div class="content">
+        <h2>Bonjour, je suis</h2>
+        <h1>Chrétien Kyllian</h1>
+        <p>Étudiant en BTS SIO.</p>
+        <a class="btn" href="Profilperso.html">En savoir plus</a>
+    </div>
+
+    <!-- Competences Section -->
+    <div class="container">
+        <div class="left-section">
+            <h1>Diverses compétences</h1>
+            <p>Voici quelles compétences que j'accorde davantage d'attention</p>
+            <button onclick="window.location.href='Competence.html';">Voir les compétences</button>
+        </div>
+        <div class="right-section">
+            <div class="card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>HTML/CSS</h3>
+                <p>Langage en front-end</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-layer-group"></i>
+                <h3>JavaScript</h3>
+                <p>Langage Front-end basé sur des fonctions</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-database"></i>
+                <h3>PHP, MySQL</h3>
+                <p>Gestion de base de données et requêtes SQL</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Délégué à la protection des données (DPO)</h3>
+                <p>Mettre en œuvre la conformité au règlement européen sur la protection des données au sein d'une entreprise</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>Kyllian</span>
+        </div>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Politique de cookies</a>
+        <a href="#">Mentions légales</a>
+        <p>© 2024</p>
+    </div>
+</body>
+</html>

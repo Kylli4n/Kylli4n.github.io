@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <style>
+       body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #6a6969;
+    }
+
+    /* Animation de dégradé de fond */
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(45deg, #ff0000, #000000, #ff0000, #000000);
+        background-size: 400% 400%;
+        animation: gradientAnimation 5s ease infinite;
+        z-index: -1; /* Placer le fond derrière le contenu */
+    }
+
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .profile-card {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        width: 300px;
+        text-align: left;
+    }
+    .profile-card h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+    .profile-card h2 {
+        margin: 5px 0;
+        font-size: 18px;
+        font-weight: normal;
+    }
+    .profile-card p {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    /* Section "À propos de moi" avec un padding supérieur pour l'écarter du haut */
+    .about-me {
+        text-align: center;
+        padding: 20px;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        margin: 20px 0;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        margin-top: 450px; /* Ajout d'un espace au sommet */
+    }
+
+    .about-me h1 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .about-me p {
+        font-size: 16px;
+        margin: 10px 0;
+        line-height: 1.6;
+    }
+
+    .timeline-container {
+        position: relative;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        margin-top: 40px; /* Décale la section un peu plus bas */
+    }
+    .timeline-container h1 {
+        font-size: 36px;
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .timeline {
+        position: relative;
+        margin: 0 auto;
+        padding: 10px 0;
+        width: 80%;
+    }
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: #ffffff;
+    }
+    .timeline-item {
+        position: relative;
+        margin: 20px 0;
+        padding-left: 50%;
+        clear: both;
+    }
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ffffff;
+        margin-left: -10px;
+        top: 10px;
+    }
+    .timeline-item-content {
+        padding: 10px 20px;
+        background: #333333;
+        border-radius: 5px;
+        position: relative;
+        width: 45%;
+        left: 10px;
+    }
+    .timeline-item-content a {
+        color: #4da6ff;
+        text-decoration: none;
+    }
+    .timeline-item-content a:hover {
+        text-decoration: underline;
+    }
+    .timeline-item-content .date {
+        font-size: 14px;
+        color: #cccccc;
+    }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
+        <ul>
+            <<li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html">Profil perso</a></li>
+            <li><a href="BtsSio.html">BTS SIO</a></li>
+            <li><a href="Competence.html">Compétence</a></li>
+            <li><a href="Projet.html">Projets</a></li>
+            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        </ul>
+        <a class="contact" href="Contact.html">Contact</a>
+    </div>
+
+    <!-- Profile Background -->
+    <div class="background">
+        <div class="profile-card">
+            <h1>Kyllian Chrétien</h1>
+            <h2>Etudiant en BTS SIO</h2>
+            <p><strong>Téléphone</strong><br>06 ** ** ** 17</p>
+            <p><strong>E-mail</strong><br>****@gmail.com</p>
+            <p><strong>Adresse</strong><br>** ******* *****</p>
+        </div>
+    </div>
+
+        <!-- About Me Section -->
+    <div class="about-me">
+        <h1>À propos de moi</h1>
+        <p>
+            Je m'appelle Kyllian Chrétien, étudiant passionné en BTS Services Informatiques aux Organisations (SIO). 
+            Curieux et déterminé, je m'intéresse au développement web, à la gestion de projets informatiques, et à l'administration réseau. 
+            Mon objectif est de perfectionner mes compétences techniques tout en découvrant de nouvelles opportunités dans le domaine du numérique.
+        </p>
+        <p>
+            En dehors de mes études, j'aime explorer de nouvelles technologies, travailler sur des projets personnels et collaborer avec d'autres passionnés.
+            Mon engagement dans mes stages et mes expériences passées témoigne de ma motivation et de ma volonté de contribuer activement à mon futur secteur professionnel.
+        </p>
+    </div>
+
+
+    <!-- Timeline Section -->
+    <div class="timeline-container">
+        <h1>Expérience professionnelle</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <div class="date">2019/2020</div>
+                    Stagiaire - l'entreprise SARL Baron | 5 rue Jean Mermoz 68127 Sainte Croix en Plaine, Limoges, Nouvelle-Aquitaine
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-item-content">
+                    <div class="date">Mai 2024 - Juin 2024 </div>
+                    Stagiaire - 3iL Ingénieurs | Limoges, Nouvelle-Aquitaine                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>Kyllian</span>
+        </div>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Politique de cookies</a>
+        <a href="#">Mentions légales</a>
+        <p>© 2024</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Compétences</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .container h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .container p {
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .skill, .skill-box {
+            width: 30%;
+            background-color: #1e1e1e;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .skill i, .skill-box img {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00bcd4;
+            height: 50px;
+            width: 50px;
+        }
+        .skill h3, .skill-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .skill ul, .skill-box ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .skill ul li, .skill-box ul li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .skill ul li:before, .skill-box ul li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #00bcd4;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            margin-top: 20px;
+        }
+        .footer p {
+            margin: 0;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
+        <ul>
+            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html">Profil perso</a></li>
+            <li><a href="BtsSio.html">BTS SIO</a></li>
+            <li><a href="Competence.html">Compétence</a></li>
+            <li><a href="Projet.html">Projets</a></li>
+            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        </ul>
+        <a class="contact" href="#">Contact</a>
+    </div>
+
+    <div class="container">
+        <h1>Compétences</h1>
+        <p>Etant étudiant en BTS SIO, j'ai acquis des compétence dans le domaine de la programmation ainsi que dans la cybersécurité.</p>
+        
+        <div class="skills">
+            <!-- First Section Skills -->
+            <div class="skill">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Maîtrise du développement logiciel</h3>
+                <ul>
+                    <li>Acquisition de compétences en programmation dans différents langages (Java, C#, Python, etc.).</li>
+                    <li>Conception et développement d'applications informatiques répondant aux besoins spécifiques des organisations.</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <i class="fas fa-file-alt"></i>
+                <h3>Analyse et conception de systèmes d'information</h3>
+                <ul>
+                    <li>Capacité à analyser les besoins des utilisateurs et à concevoir des solutions logicielles adaptées.</li>
+                    <li>Utilisation de méthodes et d'outils de modélisation pour la conception de systèmes d'information.</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Gestion de projets informatiques</h3>
+                <ul>
+                    <li>Apprentissage des méthodes de gestion de projets (cycle de vie, planification, suivi, gestion des risques, etc.).</li>
+                    <li>Collaboration au sein d'équipes projet pour la réalisation et le déploiement de solutions logicielles.</li>
+                </ul>
+            </div>
+
+            <!-- Second Section Skills -->
+            <div class="skill-box">
+                <img alt="Database administration icon" height="50" src="https://storage.googleapis.com/a1aa/image/NDtsIoz88S7eEqw3vfLnsIKvmTLrOtzlmXDZYxuzIZqONj0TA.jpg" width="50"/>
+                <h2>Administration de bases de données</h2>
+                <ul>
+                    <li>Connaissance des principes fondamentaux des bases de données relationnelles.</li>
+                    <li>Compétences en administration de bases de données (création, modification, optimisation, sauvegarde, etc.).</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <img alt="Technology and innovation icon" height="50" src="https://storage.googleapis.com/a1aa/image/X1wwtNg6V6KEKtr0I0n8aEvSzwOcvfTeL5NGDfeffE5qUzI9E.jpg" width="50"/>
+                <h2>Veille technologique et innovation</h2>
+                <ul>
+                    <li>Capacité à suivre l'évolution des technologies de l'information et de la communication.</li>
+                    <li>Intégration de solutions innovantes dans le développement et la gestion des applications métiers.</li>
+                </ul>
+            </div>
+            <div class="skill-box">
+                <img alt="Communication and client relations icon" height="50" src="https://storage.googleapis.com/a1aa/image/W6FiWPwPLZ5dMp72RhlJ8I3mcSVZnX2PtB8yEYsKJmMUzI9E.jpg" width="50"/>
+                <h2>Communication et relation client</h2>
+                <ul>
+                    <li>Aptitude à communiquer efficacement avec les utilisateurs pour comprendre leurs besoins et leur apporter des solutions adaptées.</li>
+                    <li>Développement de compétences relationnelles pour travailler en équipe et collaborer avec les différents acteurs d'un projet informatique.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>Kyllian</span>
+        </div>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Politique de cookies</a>
+        <a href="#">Mentions légales</a>
+        <p>© 2024</p>
+    </div>
+</body>
+</html>

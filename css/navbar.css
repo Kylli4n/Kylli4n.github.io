@@ -1,0 +1,55 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0d0d0d;
+    border-bottom: 2px solid #ff00ff;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s; /* Ajout d'une transition pour un effet fluide */
+}
+
+.navbar ul li a.active {
+    color: red;
+}
+
+.navbar ul li a:hover {
+    color: red; /* Changer la couleur du texte en rouge lors du survol */
+}
+
+.navbar ul li a i {
+    margin-right: 5px;
+}
+
+.navbar .contact {
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: white; /* Par défaut, le texte est blanc */
+    transition: color 0.3s; /* Transition pour un effet fluide */
+}
+
+.navbar .contact:hover {
+    color: red; /* Lors du survol, le texte devient rouge */
+    border-color: red; /* Ajouter également un changement de couleur de la bordure */
+}

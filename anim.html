@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille technologique</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
+</head>
+<style>
+    .absolute {
+    position: absolute;
+    }
+
+    .inline-block {
+    display: inline-block;
+    }
+
+    .loader {
+    display: flex;
+    margin: 0.25em 0;
+    }
+
+    .w-2 {
+    width: 0.5em;
+    }
+
+    .dash {
+    animation: dashArray 2s ease-in-out infinite,
+        dashOffset 2s linear infinite;
+    }
+
+    .spin {
+    animation: spinDashArray 2s ease-in-out infinite,
+        spin 8s ease-in-out infinite,
+        dashOffset 2s linear infinite;
+    transform-origin: center;
+    }
+
+    @keyframes dashArray {
+    0% {
+        stroke-dasharray: 0 1 359 0;
+    }
+
+    50% {
+        stroke-dasharray: 0 359 1 0;
+    }
+
+    100% {
+        stroke-dasharray: 359 1 0 0;
+    }
+    }
+
+    @keyframes spinDashArray {
+    0% {
+        stroke-dasharray: 270 90;
+    }
+
+    50% {
+        stroke-dasharray: 0 360;
+    }
+
+    100% {
+        stroke-dasharray: 270 90;
+    }
+    }
+
+    @keyframes dashOffset {
+    0% {
+        stroke-dashoffset: 365;
+    }
+
+    100% {
+        stroke-dashoffset: 5;
+    }
+    }
+
+    @keyframes spin {
+    0% {
+        rotate: 0deg;
+    }
+
+    12.5%,
+    25% {
+        rotate: 270deg;
+    }
+
+    37.5%,
+    50% {
+        rotate: 540deg;
+    }
+
+    62.5%,
+    75% {
+        rotate: 810deg;
+    }
+
+    87.5%,
+    100% {
+        rotate: 1080deg;
+    }
+    }
+
+</style>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
+        <ul>
+            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html">Profil perso</a></li>
+            <li><a href="BtsSio.html">BTS SIO</a></li>
+            <li><a href="Competence.html">Compétence</a></li>
+            <li><a href="Projet.html">Projets</a></li>
+            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        </ul>
+        <a class="contact" href="Contact.html">Contact</a>
+    </div>
+
+    <div class="loader">
+        <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+          <defs>
+            <!-- Dégradés -->
+            <linearGradient id="b" gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0">
+              <stop stop-color="#973BED"></stop>
+              <stop stop-color="#007CFF" offset="1"></stop>
+            </linearGradient>
+            <linearGradient id="c" gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0">
+              <stop stop-color="#FFC800"></stop>
+              <stop stop-color="#F0F" offset="1"></stop>
+              <animateTransform
+                repeatCount="indefinite"
+                keySplines=".42,0,.58,1"
+                keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1"
+                dur="8s"
+                values="0 32 32;-270 32 32;-540 32 32;-810 32 32;-1080 32 32"
+                type="rotate"
+                attributeName="gradientTransform">
+              </animateTransform>
+            </linearGradient>
+            <linearGradient id="d" gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0">
+              <stop stop-color="#00E0ED"></stop>
+              <stop stop-color="#00DA72" offset="1"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+      
+        <!-- Lettre K -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" 
+                d="M 10,5 L 10,60 L 20,30 L 10,15 L 30,40" class="dash" id="k" pathLength="360"></path>
+        </svg>
+      
+        <!-- Lettre Y -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" 
+                d="M 15,5 L 32,32 L 48,5 M 32,32 L 32,60" class="dash" id="y" pathLength="360"></path>
+        </svg>
+      
+        <!-- Lettre L -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" 
+                d="M 15,5 L 15,60 L 45,60" class="dash" id="l1" pathLength="360"></path>
+        </svg>
+      
+        <!-- Lettre L (deuxième L) -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" 
+                d="M 15,5 L 15,60 L 45,60" class="dash" id="l2" pathLength="360"></path>
+        </svg>
+      
+        <!-- Lettre I -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" 
+                d="M 32,5 L 32,60" class="dash" id="i" pathLength="360"></path>
+        </svg>
+      
+        <!-- Lettre A -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" 
+                d="M 32,5 L 15,60 L 32,45 L 50,60 L 32,5" class="dash" id="a" pathLength="360"></path>
+        </svg>
+      
+        <!-- Lettre N -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+          <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" 
+                d="M 15,60 L 15,5 L 50,60 L 50,5" class="dash" id="n" pathLength="360"></path>
+        </svg>
+      </div>
+      
+
+
+    
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>Kyllian</span>
+        </div>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Politique de cookies</a>
+        <a href="#">Mentions légales</a>
+        <p>© 2024</p>
+    </div>
+</body>
+</body>
+</html>

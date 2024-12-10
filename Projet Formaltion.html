@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets Formation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;family=Pacifico&amp;display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .project {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .project img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .project-info h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2em;
+            margin: 0;
+        }
+        .project-info h3 {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        /* Nouveau style des boutons */
+        button {
+            transition: all 0.5s;
+            font-size: 17px;
+            padding: 1ch 2ch;
+            background-color: white;
+            color: #000;
+            cursor: pointer;
+            border: none;
+            border-radius: 2px;
+            box-shadow:
+                2px 2px 0px hsl(0, 0%, 90%),
+                4px 4px 0px hsl(0, 0%, 80%),
+                6px 6px 0px hsl(0, 0%, 70%),
+                8px 8px 0px hsl(0, 0%, 60%),
+                10px 10px 0px hsl(0, 0%, 50%),
+                12px 12px 0px hsl(0, 0%, 40%),
+                14px 14px 0px hsl(0, 0%, 30%),
+                16px 16px 0px hsl(0, 0%, 20%),
+                18px 18px 0px hsl(0, 0%, 10%);
+        }
+
+        button:hover {
+            background-color: hsl(0, 0%, 50%);
+            color: #fff;
+            box-shadow: none;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #333;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
+        <ul>
+            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html">Profil perso</a></li>
+            <li><a href="BtsSio.html">BTS SIO</a></li>
+            <li><a href="Competence.html">Compétence</a></li>
+            <li><a href="Projet.html">Projets</a></li>
+            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        </ul>
+        <a class="contact" href="Contact.html">Contact</a>
+    </div>
+    
+    <div class="container">
+        <h1>Mes projets</h1>
+        <p>Ci-dessous vous retrouverez tous mes anciens projets de ma formation réalisés à ce jour.</p>
+        
+        <div class="project">
+            <img alt="Person performing a karate kick at sunset on the beach" height="200" src=".jpg" width="300"/>
+            <div class="project-info">
+                <h3>01</h3>
+                <h2>Brocant'art</h2>
+                <button>
+                    LIRE <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <hr/>
+
+        <div class="project">
+            <div class="project-info">
+                <h3>02</h3>
+                <h2>Projet Club Photo</h2>
+                <button>
+                    LIRE <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <img alt="Close-up of a camera lens with a light source in the background" height="200" src="https://storage.googleapis.com/a1aa/image/fJEtVdDLiY2dVaYw8RqrLJOHULvg3Jx22d0ZKLLDkGfFseqnA.jpg" width="300"/>
+        </div>
+        <hr/>
+
+        <div class="project">
+            <img alt="Coding on a laptop in a modern workspace" height="200" src="https://storage.googleapis.com/a1aa/image/ONqMrMSqHzKWKJSef0gX7aXfDXZHRJGEF8Hfp57VDrf3g1reE.jpg" width="300"/>
+            <div class="project-info">
+                <h3>03</h3>
+                <h2>Projet Karate</h2>
+                <button>
+                    LIRE <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+        <hr/>
+
+        <div class="project">
+            <div class="project-info">
+                <h3>04</h3>
+                <h2>Site Resto</h2>
+                <button>
+                    LIRE <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <img alt="Online shopping illustration with a laptop and cart" height="200" src=".jpg" width="300"/>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span>Kyllian</span>
+        </div>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Politique de cookies</a>
+        <a href="#">Mentions légales</a>
+        <p>© 2024</p>
+    </div>
+</body>
+</html>
