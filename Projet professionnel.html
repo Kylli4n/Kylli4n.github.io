@@ -53,10 +53,6 @@
             width: 45%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .project img {
-            width: 100%;
-            height: auto;
-        }
         .project-details {
             padding: 20px;
         }
@@ -70,6 +66,12 @@
             font-size: 16px;
             margin: 5px 0;
         }
+        .project img {
+            width: 100%;
+            height: 400px; /* Ajustez la hauteur selon vos besoins */
+            object-fit: cover; /* Assurez-vous que l'image conserve un bon cadrage */
+        }
+
     </style>
 <body>
     <!-- Navbar -->
@@ -99,37 +101,44 @@
 
         <!-- Projects Section -->
         <div class="projects">
-            <!-- Project 1 -->
+            <!-- Projet 1 -->
             <div class="project">
-                <img alt="Image of a cathedral with a blue sky background" height="400" src="https://storage.googleapis.com/a1aa/image/LCwL5l8vMZqSNdPU5USrfTuKgCOL0nNjzpMetTHvc6LOEfqnA.jpg" width="600"/>
+                <img alt="Image of a cathedral with a blue sky background" src="https://storage.googleapis.com/a1aa/image/LCwL5l8vMZqSNdPU5USrfTuKgCOL0nNjzpMetTHvc6LOEfqnA.jpg"/>
                 <div class="project-details">
                     <div class="project-title">
-                        Abbaye Limoges (Terminer)
+                        <a href="page projet abbay.html">Abbaye Limoges (Terminer)</a>
                     </div>
                     <div class="project-client">
-                        Client -> la ville de Limoges
+                        Client : la ville de Limoges
                     </div>
                     <div class="project-request">
                         Demande : recréer l'abbaye de Limoges (Saint-Martial) en Réalité Virtuelle
                     </div>
+                    <div class="project-category">
+                        Catégorie : Stage
+                    </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Projet 2 -->
             <div class="project">
-                <img alt="Image of sand dunes in a desert" height="400" src="https://storage.googleapis.com/a1aa/image/NvwSYCNBYfTjf0NLBexhfofj9l6Qtm0kAz3HIXCZ05AXh4reE.jpg" width="600"/>
+                <img alt="Image of sand dunes in a desert" src="images/ObjectifRéseau.png"/>
                 <div class="project-details">
                     <div class="project-title">
-                        Nom du projet
+                        <a href="Documents/📂 Structure du projet Objectif Réseau.pdf" target="_blank">Objectif Réseau (Terminer)</a>
                     </div>
                     <div class="project-client">
-                        Client : ........
+                        Client : ChevalierB.fr
                     </div>
                     <div class="project-request">
-                        Demande : ........
+                        Demande : Refaire une application nommée "Objectif Réseau" pour le déployer en national
+                    </div>
+                    <div class="project-category">
+                        Catégorie : Stage
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
