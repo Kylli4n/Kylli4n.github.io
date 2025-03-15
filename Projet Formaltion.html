@@ -46,7 +46,7 @@
         .project-info {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
         .project-info h2 {
             font-family: 'Pacifico', cursive;
@@ -59,7 +59,7 @@
         }
 
         /* Nouveau style des boutons */
-        button {
+        .button {
             transition: all 0.5s;
             font-size: 17px;
             padding: 1ch 2ch;
@@ -78,13 +78,17 @@
                 14px 14px 0px hsl(0, 0%, 30%),
                 16px 16px 0px hsl(0, 0%, 20%),
                 18px 18px 0px hsl(0, 0%, 10%);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
 
-        button:hover {
+        .button:hover {
             background-color: hsl(0, 0%, 50%);
             color: #fff;
             box-shadow: none;
         }
+
 
         hr {
             border: 0;
@@ -118,9 +122,9 @@
             <div class="project-info">
                 <h3>01</h3>
                 <h2>Brocant'art</h2>
-                <button>
+                <a href="" target="_blank" class="button">
                     LIRE <i class="fas fa-arrow-right"></i>
-                </button>
+                </a>                
             </div>
         </div>
         <hr/>
@@ -129,9 +133,9 @@
             <div class="project-info">
                 <h3>02</h3>
                 <h2>Projet Club Photo</h2>
-                <button>
+                <a href="Documents/Documentation technique CLUB PHOTO (1).pdf" target="_blank" class="button">
                     LIRE <i class="fas fa-arrow-right"></i>
-                </button>
+                </a> 
             </div>
             <img alt="Close-up of a camera lens with a light source in the background" height="200" src="https://storage.googleapis.com/a1aa/image/fJEtVdDLiY2dVaYw8RqrLJOHULvg3Jx22d0ZKLLDkGfFseqnA.jpg" width="300"/>
         </div>
@@ -142,9 +146,9 @@
             <div class="project-info">
                 <h3>03</h3>
                 <h2>Projet Karate</h2>
-                <button>
+                <a href="" target="_blank" class="button">
                     LIRE <i class="fas fa-arrow-right"></i>
-                </button>
+                </a> 
             </div>
         </div>
         <hr/>
@@ -153,9 +157,9 @@
             <div class="project-info">
                 <h3>04</h3>
                 <h2>Site Resto</h2>
-                <button>
+                <a href="" target="_blank" class="button">
                     LIRE <i class="fas fa-arrow-right"></i>
-                </button>
+                </a> 
             </div>
             <img alt="Online shopping illustration with a laptop and cart" height="200" src=".jpg" width="300"/>
         </div>
