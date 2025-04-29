@@ -9,8 +9,154 @@
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <style>
+    body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+    /* Animation 1 - Waves */
+    .center_div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+        }
+
+        .wave {
+            width: 1.8rem;
+            height: 150px;
+            background-color: #ff6b6b;
+            margin: 0 4px;
+            border-radius: 0.4rem;
+            animation: wave 1.5s linear infinite;
+            transform-origin: center;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: scale(0);
+                filter: hue-rotate(90deg) blur(100px);
+            }
+            25% {
+                transform: scale(0);
+                filter: hue-rotate(120deg) blur(50px);
+            }
+            50% {
+                transform: scale(1);
+                filter: hue-rotate(180deg) blur(25px);
+            }
+            75% {
+                transform: scale(0);
+                filter: hue-rotate(360deg) blur(2px);
+            }
+            100% {
+                transform: scale(0);
+                filter: hue-rotate(0deg) blur(0);
+            }
+        }
+
+        .wave:nth-child(2) { animation-delay: 0.1s; }
+        .wave:nth-child(3) { animation-delay: 0.2s; }
+        .wave:nth-child(4) { animation-delay: 0.3s; }
+        .wave:nth-child(5) { animation-delay: 0.4s; }
+        .wave:nth-child(6) { animation-delay: 0.5s; }
+        .wave:nth-child(7) { animation-delay: 0.6s; }
+        .wave:nth-child(8) { animation-delay: 0.7s; }
+        .wave:nth-child(9) { animation-delay: 0.8s; }
+        .wave:nth-child(10) { animation-delay: 0.9s; }
+
+        /* Solar System Style */
+        .solar-system {
+            position: relative;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+        }
+
+        .access-text {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+            z-index: 10;
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff0, #f00);
+            width: 20px;
+            height: 20px;
+            animation: orbit 6s linear infinite;
+        }
+
+        .orbit {
+            animation-timing-function: linear;
+        }
+
+        .orbit2 {
+            width: 15px;
+            height: 15px;
+            background: radial-gradient(circle, #0ff, #00f);
+            animation: orbit2 10s linear infinite;
+        }
+
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+        }
+
+        @keyframes orbit2 {
+            0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+        }
+
+
+        /* Animation 2 - Grid Loader */
+        .container-loader {
+            position: relative;
+            transform-style: preserve-3d;
+            overflow: hidden;
+            transform: translateX(0%);
+            animation: perspective 20s linear infinite both;
+            height: 200px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .loader {
+            --color: rgb(255, 0, 0);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: repeating-linear-gradient(
+                transparent 0 30px,
+                var(--color) 31px 32px
+            ),
+            repeating-linear-gradient(
+                to right,
+                transparent 0 30px,
+                var(--color) 31px 32px
+            );
+            border-left: 1px solid var(--color);
+            border-top: 1px solid var(--color);
+            transform: rotateX(37deg);
+            top: 0;
+        }
+
+        @keyframes perspective {
+            0% {
+                perspective: 1px;
+            }
+            100% {
+                perspective: 50px;
+            }
+        }
      
-    </style>
+</style>
 </head>
 <body>
     <!-- Navbar -->
@@ -26,6 +172,32 @@
         </ul>
         <a class="contact" href="Contact.html">Contact</a>
     </div>
+
+    <!-- Wave Animation -->
+    <div class="center_div">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Juste après les vagues -->
+    <div class="solar-system">
+        <div class="planet orbit"></div>
+        <div class="planet orbit orbit2"></div>
+        <h1 class="access-text">NO ACCESS at the moment</h1>
+    </div>
+
+    <!-- Grid Loader Animation -->
+    <main class="container-loader">
+        <aside class="loader"></aside>
+    </main>
 
     <!-- Footer -->
     <div class="footer">
