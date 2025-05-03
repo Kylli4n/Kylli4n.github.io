@@ -50,7 +50,7 @@
             font-family: 'Pacifico', cursive;
             font-size: 2em;
             margin: 10px 0 5px;
-        }
+        }   
 
         .project-info h3 {
             font-size: 1.2em;
@@ -110,6 +110,30 @@
             background: linear-gradient(45deg, #cc0000, #1a1a1a); /* teinte plus sombre au hover */
             transform: scale(1.05);
         }
+        .project-details {
+            display: none;
+            margin-top: 15px;
+            text-align: left;
+            font-size: 0.95em;
+            color: #dddddd;
+        }
+
+        .toggle-button {
+            margin-top: 10px;
+            padding: 0.5em 1em;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-button:hover {
+            background-color: #666;
+        }
+
 
         hr {
             border: 0;
@@ -154,12 +178,26 @@
             <div class="project-info">
                 <h3>02</h3>
                 <h2>Projet Club Photo</h2>
-                <p class="project-year">Première année</p> <!-- Ajout de l'année -->
+                <p class="project-year">Première année</p>
                 <a href="Documents/Documentation technique CLUB PHOTO (1).pdf" target="_blank" class="button">
                     LIRE <i class="fas fa-arrow-right"></i>
-                </a> 
+                </a>
+                <button class="toggle-button">Voir plus</button>
+            </div>
+            <div class="project-details">
+                <p><strong>Objectif :</strong> Développer une interface web pour le Club Photo de Limoges...</p>
+                <p><strong>Compétences mobilisées :</strong></p>
+                <ul>
+                    <li><strong>B1.1</strong> Gérer le patrimoine informatique : mise en place d'une BDD, code structuré...</li>
+                    <li><strong>B1.2</strong> Répondre aux incidents : correction d’erreurs SQL...</li>
+                    <li><strong>B1.3</strong> Développer la présence en ligne : site attrayant et fonctionnel...</li>
+                    <li><strong>B1.4 </strong> Travailler en mode projet : gestion par étapes, documentation...</li>
+                    <li><strong>B1.6</strong> Développement professionnel : montée en compétences PHP, SQL, sécurité...</li>
+                </ul>
+                <p><strong>Résultat :</strong> J’ai livré une application web robuste qui permet aux membres du club de gérer facilement les photos et articles, et d’administrer les informations des photographes. J’ai appris à concevoir une application multi-parties (gestion d’éléments liés entre eux), à sécuriser les interactions utilisateurs/base de données, et à proposer une navigation fluide. Parmi les principales difficultés : assurer la cohérence des liens entre les modules (photos, articles, photographes) et éviter les failles SQL.</p>
             </div>
         </div>
+        
 
         <div class="project">            
             <div class="project-info">
@@ -197,13 +235,27 @@
         <div class="project">
             <div class="project-info">
                 <h3>06</h3>
-                <h2>Projet Bibliotheque</h2>
-                <p class="project-year">Deuxième année</p> <!-- Ajout de l'année -->
+                <h2>Projet Bibliothèque</h2>
+                <p class="project-year">Deuxième année</p>
                 <a href="Documents/Fiche de Documentation Technique.pdf" target="_blank" class="button">
                     LIRE <i class="fas fa-arrow-right"></i>
-                </a> 
+                </a>
+                <button class="toggle-button">Voir plus</button>
+            </div>
+            <div class="project-details">
+                <p><strong>Objectif :</strong> Développer une application mobile multiplateforme (Flutter/Dart) pour gérer le catalogue d’une bibliothèque. L’application permet aux bibliothécaires d’ajouter, modifier, supprimer et consulter les livres et auteurs, avec une synchronisation en temps réel via Firebase.</p>
+                <p><strong>Compétences mobilisées :</strong></p>
+                <ul>
+                    <li><strong>B1.1</strong> Gérer le patrimoine informatique : gestion de la base de données Firebase, structuration des entités (livres, auteurs) et mise en place des règles de sécurité.</li>
+                    <li><strong>B1.3</strong> Développer la présence en ligne : création d’une interface intuitive et responsive pour renforcer l’image numérique de la bibliothèque.</li>
+                    <li><strong>B1.4</strong> Travailler en mode projet : adoption de l’architecture MVVM, planification des développements et usage de Git pour le versioning.</li>
+                    <li><strong>B1.5</strong> Mettre à disposition des utilisateurs un service informatique : déploiement prévu sur Android/iOS, accès sécurisé pour les différents profils utilisateurs.</li>
+                    <li><strong>B1.6</strong> Organiser son développement professionnel : montée en compétences sur Flutter, Firebase et les tests d’application mobile.</li>
+                </ul>
+                <p><strong>Résultat :</strong> J’ai réalisé une application fonctionnelle testée sur simulateur et appareils physiques, capable de gérer les ressources en temps réel. J’ai appris à structurer un projet mobile complexe, à configurer une authentification sécurisée et à anticiper les besoins de déploiement multi-plateforme. Les principales difficultés ont été liées à la synchronisation en temps réel et à la configuration des règles Firebase.</p>
             </div>
         </div>
+        
 
         <div class="project">
             <div class="project-info">
@@ -242,3 +294,12 @@
     </div>
 </body>
 </html>
+<script>
+    document.querySelectorAll('.toggle-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const details = button.parentElement.nextElementSibling;
+            details.style.display = details.style.display === 'block' ? 'none' : 'block';
+            button.textContent = details.style.display === 'block' ? 'Voir moins' : 'Voir plus';
+        });
+    });
+</script>

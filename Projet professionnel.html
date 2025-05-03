@@ -71,6 +71,55 @@
             height: 400px; /* Ajustez la hauteur selon vos besoins */
             object-fit: cover; /* Assurez-vous que l'image conserve un bon cadrage */
         }
+        .project-competences, .project-result {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #d0d0d0;
+        }
+
+        .project-competences ul {
+            padding-left: 20px;
+        }
+
+        .project-competences li {
+            margin-bottom: 5px;
+        }
+        .project-competences, .project-result {
+            background-color: #2c2c2c;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .project-competences strong, .project-result strong {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffcc00; /* jaune doré pour les titres */
+        }
+
+        .project-competences ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .project-competences li {
+            margin-bottom: 8px;
+            list-style-type: disc;
+        }
+
+        .project-result p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .project {
+                width: 100%;
+            }
+        }
+
 
     </style>
 <body>
@@ -117,9 +166,25 @@
                     <div class="project-category">
                         Catégorie : Stage
                     </div>
+                    
+                    <!-- Compétences mobilisées -->
+                    <div class="project-competences">
+                        <strong>Compétences mobilisées :</strong>
+                        <ul>
+                            <li>B1.1 Gérer le patrimoine informatique -> j’ai organisé les fichiers 3D, géré les versions du projet, et assuré la sauvegarde régulière des données.</li>
+                            <li>B1.2 Répondre aux incidents et aux demandes -> j’ai corrigé des bugs liés aux textures, aux collisions, et répondu aux demandes de modifications des tuteurs.</li>
+                            <li>B1.4 Travailler en mode projet -> j’ai respecté un planning, travaillé en collaboration avec d’autres intervenants comme des historiens.</li>
+                            <li>B1.6 Organiser son développement professionnel -> j’ai appris à utiliser de nouveaux outils comme Unity, suivi des tutoriels sur la modélisation 3D, et approfondi mes compétences en VR.</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Résultat -->
+                    <div class="project-result">
+                        <strong>Résultat :</strong>
+                        <p>J’ai contribué à livrer une maquette VR complète, permettant de visualiser l’abbaye en immersion. J’ai appris à gérer un projet mêlant techniques et aspects artistiques, et à surmonter des problèmes techniques complexes (comme l’optimisation des performances en VR). Parmi les principales difficultés : optimiser les scènes pour éviter les lags, trouver des ressources 3D de qualité, et gérer les limitations techniques liées aux casques VR.</p>
+                    </div>
                 </div>
             </div>
-
             <!-- Projet 2 -->
             <div class="project">
                 <img alt="Image of sand dunes in a desert" src="images/ObjectifRéseau.png"/>
@@ -131,14 +196,30 @@
                         Client : ChevalierB.fr
                     </div>
                     <div class="project-request">
-                        Demande : Refaire une application nommée "Objectif Réseau" pour le déployer en national
+                        Objectif : Concevoir une plateforme Symfony pour gérer les événements, utilisateurs, rôles et invitations au sein de l’entreprise Chevalierb.fr. Le projet visait à optimiser l’organisation des événements et la gestion des participants, avec une interface web sécurisée et fluide.
                     </div>
                     <div class="project-category">
                         Catégorie : Stage
                     </div>
                 </div>
+                <!-- Compétences mobilisées -->
+                <div class="project-competences">
+                    <strong>Compétences mobilisées :</strong>
+                    <ul>
+                        <li>B1.1 Gérer le patrimoine informatique -> conception et gestion d’une base de données complexe (Doctrine ORM), intégration des migrations et des relations entre tables (utilisateurs, entreprises, événements).</li>
+                        <li>B1.2 Répondre aux incidents et aux demandes -> résolution de bugs liés à l’authentification, gestion des formulaires et optimisation des performances Symfony.</li>
+                        <li>B1.3 Développer la présence en ligne -> amélioration de l’expérience utilisateur avec Symfony UX (Stimulus, Turbo), intégration de notifications et d’interactions dynamiques</li>
+                        <li>B1.4 Travailler en mode projet -> structuration du projet en modules (contrôleurs, entités, repositories), utilisation de Git, rédaction de documentation technique (README).</li>
+                        <li>B1.5 Mettre à disposition des utilisateurs un service informatique -> mise en place d’un système d’authentification et de gestion des rôles pour sécuriser l’accès.</li>
+                        <li>B1.6 Organiser son développement professionnel -> approfondissement des compétences Symfony, découverte de PHPUnit pour les tests et prise en main des outils de debug avancés.</li>
+                    </ul>
+                </div>                
+                <!-- Résultat -->
+                <div class="project-result">
+                    <strong>Résultat :</strong>
+                    <p>J’ai livré une plateforme robuste permettant de gérer les inscriptions aux événements, les invitations et les rôles utilisateurs. J’ai appris à maîtriser Symfony, à structurer un projet de grande ampleur, et à implémenter des systèmes sécurisés et performants. Les principaux défis ont porté sur la gestion fine des rôles et des droits d’accès, ainsi que l’optimisation des interactions front-end.</p>
+                </div>
             </div>
-
         </div>
     </div>
 
