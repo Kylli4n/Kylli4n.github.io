@@ -105,19 +105,39 @@
 
 </style>
 <body>
-    <!-- Navbar -->
+        <!-- Navbar -->
     <div class="navbar">
-        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
-        <ul>
-            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html">Profil personnel</a></li>
-            <li><a href="BtsSio.html">BTS SIO</a></li>
-            <li><a href="Competence.html">Compétences</a></li>
-            <li><a href="Projet.html">Projets</a></li>
-            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul id="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
         </ul>
+
         <a class="contact" href="Contact.html">Contact</a>
     </div>
+
+    <!-- Script JS menu responsive -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
 
     <div class="loader">
         <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
@@ -194,16 +214,22 @@
 
     
     <!-- Footer -->
-    <div class="footer">
+    <footer class="footer">
+    <div class="footer-content">
         <div class="logo">
-            <i class="fas fa-cube"></i>
-            <span>Kyllian</span>
+        <i class="fas fa-shield-alt"></i>
+        <span><strong>Kyllian.Dev</strong></span>
         </div>
+
+        <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
         <a href="#">Politique de cookies</a>
         <a href="#">Mentions légales</a>
-        <p>© 2024</p>
+        </div>
+
+        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
+    </footer>
 </body>
 </body>
 </html>

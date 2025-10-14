@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +7,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Reset et styles de base */
         * {
             margin: 0;
             padding: 0;
@@ -17,130 +17,199 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
             color: #ffffff;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 60px 20px;
         }
 
         .header {
-            font-size: 36px;
-            font-weight: bold;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
-        /* Section principale et additionnelle */
-        .section, .additional-section {
+        .header h1 {
+            font-size: 48px;
+            background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #b0b0b0;
+            font-size: 18px;
+        }
+
+        /* Sections principales */
+        .section {
             display: flex;
             align-items: flex-start;
+            background-color: #161616;
+            border-radius: 15px;
+            padding: 25px;
             margin-bottom: 40px;
+            box-shadow: 0 0 10px rgba(0, 166, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .section img, .icon img {
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 166, 255, 0.3);
+        }
+
+        .section img {
             width: 80px;
             height: 80px;
-            margin-right: 20px;
+            margin-right: 25px;
             border-radius: 50%;
+            border: 2px solid #00a6ff;
         }
 
-        .section-content, .additional-content {
-            flex: 1;
-        }
-
-        .section-content h2, .additional-content h2 {
+        .section-content h2 {
             font-size: 24px;
             margin-bottom: 10px;
-            color: red; /* Jaune vif pour les titres */
+            color: #00a6ff;
         }
 
-        .section-content p, .additional-content p {
+        .section-content p {
+            color: #d0d0d0;
             font-size: 16px;
-            line-height: 1.6;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .section img {
+                margin: 0 auto 20px;
+            }
+        }
+
+        /* Footer intégré cohérent */
+        .footer {
+            background-color: #1c1c1c;
+            padding: 20px;
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #00a6ff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ff3d3d;
+        }
+
+        .footer .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .footer .logo i {
+            margin-right: 10px;
+            color: #00a6ff;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+       <!-- Navbar -->
     <div class="navbar">
-        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
-        <ul>
-            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html">Profil personnel</a></li>
-            <li><a href="BtsSio.html">BTS SIO</a></li>
-            <li><a href="Competence.html">Compétences</a></li>
-            <li><a href="Projet.html">Projets</a></li>
-            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul id="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
         </ul>
+
         <a class="contact" href="Contact.html">Contact</a>
     </div>
 
-    <!-- Introduction to BTS SIO -->
+    <!-- Script JS menu responsive -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
+
+    <!-- Intro -->
     <div class="container">
         <div class="header">
-            Qu'est-ce que le BTS SIO ?
+            <h1>BTS SIO</h1>
+            <p>Services Informatiques aux Organisations — option SLAM</p>
         </div>
+
         <div class="section">
-            <img alt="Icon representing computer download" src="https://storage.googleapis.com/a1aa/image/HlBpMVaOlAL8GlqaoiqEZl0XqwWIMff7iIOSkifQizK1JSnnA.jpg"/>
+            <img src="https://storage.googleapis.com/a1aa/image/HlBpMVaOlAL8GlqaoiqEZl0XqwWIMff7iIOSkifQizK1JSnnA.jpg" alt="Ordinateur">
             <div class="section-content">
-                <h2>Introduction au BTS SIO :</h2>
-                <p>
-                    Le BTS SIO, ou Services Informatiques aux Organisations, est une formation post-baccalauréat de niveau Bac+2 en informatique. Ce diplôme vise à former des professionnels capables de répondre aux besoins informatiques des entreprises et des organisations. Il est organisé en deux options : option "Solutions d'infrastructure, systèmes et réseaux" (SISR) et option "Solutions logicielles et applications métiers" (SLAM).
-                </p>
+                <h2>Présentation du BTS SIO</h2>
+                <p>Le BTS SIO (Services Informatiques aux Organisations) forme des techniciens capables de concevoir, développer, et maintenir des solutions informatiques adaptées aux besoins des entreprises. Il se divise en deux spécialités : <strong>SLAM</strong> (développement logiciel) et <strong>SISR</strong> (réseaux et systèmes).</p>
             </div>
         </div>
+
         <div class="section">
-            <img alt="Icon representing layered documents" src="https://storage.googleapis.com/a1aa/image/QyLWxP29cbbCHR6AxM70jU3Lh1fOKYH5T0iegZZv2ph5EpzTA.jpg"/>
+            <img src="https://storage.googleapis.com/a1aa/image/QyLWxP29cbbCHR6AxM70jU3Lh1fOKYH5T0iegZZv2ph5EpzTA.jpg" alt="Documents">
             <div class="section-content">
-                <h2>Objectifs et Contenu du BTS SIO :</h2>
-                <p>
-                    Le BTS SIO a pour objectif de former des techniciens polyvalents capables de concevoir, développer, et maintenir des solutions informatiques adaptées aux besoins des organisations. Nous les étudiants acquièrent des compétences à la fois techniques et méthodologiques, ainsi que des connaissances en gestion de projets informatiques. Le programme comprend des enseignements généraux (culture générale, anglais) et des enseignements professionnels (programmation, administration système, base de données, développement web, etc.). Les stages en entreprise sont également une composante essentielle de la formation, permettant aux étudiants de mettre en pratique leurs connaissances et de développer leur expérience professionnelle.
+                <h2>Objectifs et contenu</h2>
+                <p>Le programme allie enseignements techniques (programmation, base de données, gestion de projet) et généraux (anglais, communication). Les stages en entreprise sont essentiels pour appliquer les compétences acquises et découvrir le monde professionnel.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <img src="https://storage.googleapis.com/a1aa/image/3bQKl54vEKLJBdzNnlX8h1beIbd9YoguzPfbSPa3C42oHpzTA.jpg" alt="Opportunités">
+            <div class="section-content">
+                <h2>Débouchés professionnels</h2>
+                <p>Le BTS SIO permet d’accéder à de nombreux métiers : développeur d’applications, technicien support, administrateur réseau, ou encore consultant informatique. Les diplômés peuvent intégrer des PME, SSII, administrations ou poursuivre vers une licence professionnelle ou une école d’ingénieur.</p>
             </div>
         </div>
     </div>
 
-    <!-- Additional Content (Debouchés et Poursuites) -->
-    <div class="container">
-        <div class="additional-section">
-            <div class="icon">
-                <img alt="Icon representing professional opportunities" src="https://storage.googleapis.com/a1aa/image/3bQKl54vEKLJBdzNnlX8h1beIbd9YoguzPfbSPa3C42oHpzTA.jpg"/>
-            </div>
-            <div class="additional-content">
-                <h2>Débouchés Professionnels :</h2>
-                <p>
-                    Le BTS SIO prépare aux métiers de technicien informatique, technicien support, administrateur système et réseaux, développeur d'applications, analyste-programmeur, consultant en informatique, etc. Les diplômés peuvent travailler dans des entreprises de toutes tailles, des administrations, des SSII (Sociétés de Services en Ingénierie Informatique), ou encore exercer en tant que travailleurs indépendants. Les perspectives d'emploi sont généralement bonnes, compte tenu de la demande croissante en professionnels de l'informatique dans tous les secteurs d'activité.
-                </p>
-            </div>
-        </div>
-        <div class="additional-section">
-            <div class="icon yellow">
-                <img alt="Icon representing further studies" src="https://storage.googleapis.com/a1aa/image/V93u3HKT965GKpeBlVWedUjchf0RXRUI9zgzjpUBGfIreIdeE.jpg"/>
-            </div>
-            <div class="additional-content">
-                <h2>Poursuites d'études :</h2>
-                <p>
-                    Après l'obtention du BTS SIO, les étudiants peuvent choisir de poursuivre leurs études en intégrant une licence professionnelle dans le domaine de l'informatique, une école d'ingénieurs en informatique en admission parallèle, ou encore préparer des certifications professionnelles dans des domaines spécifiques (Microsoft, Cisco, etc.). Certains choisissent également de compléter leur formation en suivant des cursus spécialisés en développement web, en cybersécurité, en gestion de projets informatiques, etc.
-                </p>
-            </div>
-        </div>
-    </div>
-
-     <!-- Footer -->
-     <div class="footer">
+    <!-- Footer -->
+    <footer class="footer">
+    <div class="footer-content">
         <div class="logo">
-            <i class="fas fa-cube"></i>
-            <span>Kyllian</span>
+        <i class="fas fa-shield-alt"></i>
+        <span><strong>Kyllian.Dev</strong></span>
         </div>
+
+        <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
         <a href="#">Politique de cookies</a>
         <a href="#">Mentions légales</a>
-        <p>© 2024</p>
+        </div>
+
+        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
+    </footer>
 </body>
 </html>

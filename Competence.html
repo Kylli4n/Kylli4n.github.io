@@ -1,190 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <title>Compétences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #121212;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
             color: #ffffff;
         }
+
         .container {
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
         .container h1 {
             font-size: 48px;
-            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
         }
+
         .container p {
             font-size: 18px;
-            margin-bottom: 50px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
         }
-        .skills {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-        .skill, .skill-box {
-            width: 30%;
-            background-color: #1e1e1e;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        .skill i, .skill-box img {
-            font-size: 40px;
-            margin-bottom: 20px;
-            color: #00bcd4;
-            height: 50px;
-            width: 50px;
-        }
-        .skill h3, .skill-box h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .skill ul, .skill-box ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-        .skill ul li, .skill-box ul li {
-            font-size: 16px;
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-        .skill ul li:before, .skill-box ul li:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #00bcd4;
-        }
+
+        /* Bouton PDF */
         .pdf-button {
             text-align: center;
-            margin-top: 20px; /* Ajustez la marge comme nécessaire */
+            margin-bottom: 50px;
         }
 
         .btn-pdf {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #00bcd4;
-            color: #ffffff;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+            color: white;
+            border-radius: 10px;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .btn-pdf:hover {
-            background-color: #0097a7;
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(0, 166, 255, 0.6);
         }
-        
-        .footer {
+
+        /* Cartes de compétences */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .skill-card {
+            background-color: #161616;
+            border-radius: 15px;
+            padding: 25px;
+            width: 320px;
             text-align: center;
-            padding: 20px;
-            background-color: #1e1e1e;
-            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 166, 255, 0.1);
         }
-        .footer p {
-            margin: 0;
-            color: #888;
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 166, 255, 0.3);
+        }
+
+        .skill-card i, .skill-card img {
+            font-size: 40px;
+            color: #00a6ff;
+            margin-bottom: 20px;
+            height: 50px;
+            width: 50px;
+        }
+
+        .skill-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #00a6ff;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            color: #d0d0d0;
+        }
+
+        .skill-card ul li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .skill-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #00a6ff;
+        }
+
+        /* Footer cohérent */
+        .footer {
+            background-color: #1c1c1c;
+            padding: 20px;
+            text-align: center;
+            color: #b0b0b0;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #00a6ff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ff3d3d;
+        }
+
+        .footer .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .footer .logo i {
+            margin-right: 10px;
+            color: #00a6ff;
+        }
+
+        @media (max-width: 768px) {
+            .skill-card {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
+        <!-- Navbar -->
     <div class="navbar">
-        <img alt="Kyllian-Dev Logo" height="50" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" width="100"/>
-        <ul>
-            <li><a class="active" href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html">Profil personnel</a></li>
-            <li><a href="BtsSio.html">BTS SIO</a></li>
-            <li><a href="Competence.html">Compétences</a></li>
-            <li><a href="Projet.html">Projets</a></li>
-            <li><a href="Veillle technologique.html">Veillle technologique</a></li>
+        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul id="menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
         </ul>
+
         <a class="contact" href="Contact.html">Contact</a>
     </div>
 
+    <!-- Script JS menu responsive -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
+
+    <!-- Contenu principal -->
     <div class="container">
-        <h1>Compétences</h1>
-        <p>Etant étudiant en BTS SIO, j'ai acquis des compétences dans le domaine de la programmation ainsi que dans la cybersécurité.</p>
+        <h1>Mes Compétences</h1>
+        <p>Au cours de ma formation en BTS SIO (option SLAM) et à travers mes projets personnels, j’ai développé des compétences variées en développement et en cybersécurité.</p>
+
         <div class="pdf-button">
-            <a href="Documents/8 - BTS SIO - Annexe 8-1 - Tableau de synthèse - Epreuve E4 - BTS SIO 2024 (1).pdf" target="_blank" class="btn-pdf">Voir mes compétences en détail</a>
+            <a href="Documents/8 - BTS SIO - Annexe 8-1 - Tableau de synthèse - Epreuve E4 - BTS SIO 2024 (1).pdf" target="_blank" class="btn-pdf">
+                <i class="fas fa-file-pdf"></i> Voir le tableau de compétences
+            </a>
         </div>
-        
+
         <div class="skills">
-            <!-- First Section Skills -->
-            <div class="skill">
+            <div class="skill-card">
                 <i class="fas fa-laptop-code"></i>
-                <h3>Maîtrise du développement logiciel</h3>
+                <h3>Développement logiciel</h3>
                 <ul>
-                    <li>Acquisition de compétences en programmation dans différents langages (Java, C#, Python, etc.).</li>
-                    <li>Conception et développement d'applications informatiques répondant aux besoins spécifiques des organisations.</li>
-                </ul>
-            </div>
-            <div class="skill">
-                <i class="fas fa-file-alt"></i>
-                <h3>Analyse et conception de systèmes d'information</h3>
-                <ul>
-                    <li>Capacité à analyser les besoins des utilisateurs et à concevoir des solutions logicielles adaptées.</li>
-                    <li>Utilisation de méthodes et d'outils de modélisation pour la conception de systèmes d'information.</li>
-                </ul>
-            </div>
-            <div class="skill">
-                <i class="fas fa-project-diagram"></i>
-                <h3>Gestion de projets informatiques</h3>
-                <ul>
-                    <li>Apprentissage des méthodes de gestion de projets (cycle de vie, planification, suivi, gestion des risques, etc.).</li>
-                    <li>Collaboration au sein d'équipes projet pour la réalisation et le déploiement de solutions logicielles.</li>
+                    <li>Maîtrise de plusieurs langages : HTML, CSS, JS, PHP, Java, Python...</li>
+                    <li>Création d’applications web et outils internes.</li>
+                    <li>Approche structurée et orientée objets.</li>
                 </ul>
             </div>
 
-            <!-- Second Section Skills -->
-            <div class="skill-box">
-                <img alt="Database administration icon" height="50" src="https://storage.googleapis.com/a1aa/image/NDtsIoz88S7eEqw3vfLnsIKvmTLrOtzlmXDZYxuzIZqONj0TA.jpg" width="50"/>
-                <h2>Administration de bases de données</h2>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Bases de données</h3>
                 <ul>
-                    <li>Connaissance des principes fondamentaux des bases de données relationnelles.</li>
-                    <li>Compétences en administration de bases de données (création, modification, optimisation, sauvegarde, etc.).</li>
+                    <li>Modélisation et gestion avec MySQL.</li>
+                    <li>Optimisation, sauvegarde et sécurité des données.</li>
                 </ul>
             </div>
-            <div class="skill-box">
-                <img alt="Technology and innovation icon" height="50" src="https://storage.googleapis.com/a1aa/image/X1wwtNg6V6KEKtr0I0n8aEvSzwOcvfTeL5NGDfeffE5qUzI9E.jpg" width="50"/>
-                <h2>Veille technologique et innovation</h2>
+
+            <div class="skill-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Gestion de projet</h3>
                 <ul>
-                    <li>Capacité à suivre l'évolution des technologies de l'information et de la communication.</li>
-                    <li>Intégration de solutions innovantes dans le développement et la gestion des applications métiers.</li>
+                    <li>Méthodes Agile et cycle en V.</li>
+                    <li>Travail collaboratif avec GitHub et Trello.</li>
+                    <li>Documentation et suivi technique.</li>
                 </ul>
             </div>
-            <div class="skill-box">
-                <img alt="Communication and client relations icon" height="50" src="https://storage.googleapis.com/a1aa/image/W6FiWPwPLZ5dMp72RhlJ8I3mcSVZnX2PtB8yEYsKJmMUzI9E.jpg" width="50"/>
-                <h2>Communication et relation client</h2>
+
+            <div class="skill-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Cybersécurité</h3>
                 <ul>
-                    <li>Aptitude à communiquer efficacement avec les utilisateurs pour comprendre leurs besoins et leur apporter des solutions adaptées.</li>
-                    <li>Développement de compétences relationnelles pour travailler en équipe et collaborer avec les différents acteurs d'un projet informatique.</li>
+                    <li>Veille technologique sur les menaces actuelles.</li>
+                    <li>Bonnes pratiques et sensibilisation sécurité.</li>
+                    <li>Tests de vulnérabilité sur environnements contrôlés.</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Veille et innovation</h3>
+                <ul>
+                    <li>Suivi régulier de l’évolution des technologies web.</li>
+                    <li>Exploration d’outils modernes et frameworks.</li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-comments"></i>
+                <h3>Communication</h3>
+                <ul>
+                    <li>Travail en équipe et relation client.</li>
+                    <li>Explication claire des solutions techniques.</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <div class="footer">
+    <footer class="footer">
+    <div class="footer-content">
         <div class="logo">
-            <i class="fas fa-cube"></i>
-            <span>Kyllian</span>
+        <i class="fas fa-shield-alt"></i>
+        <span><strong>Kyllian.Dev</strong></span>
         </div>
+
+        <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
         <a href="#">Politique de cookies</a>
         <a href="#">Mentions légales</a>
-        <p>© 2024</p>
+        </div>
+
+        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
+    </footer>
 </body>
 </html>
