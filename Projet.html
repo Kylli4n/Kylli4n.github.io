@@ -1,182 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets | Kyllian.Dev</title>
     <link rel="stylesheet" href="css/navbar.css">
-    <title>Projets et Caractéristiques</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     
+    <!-- Meta SEO -->
+    <meta name="description" content="Portfolio de Kyllian - Découvrez mes projets réalisés en formation, en entreprise et à titre personnel.">
+    <meta property="og:title" content="Portfolio - Mes Projets | Kyllian.Dev">
+    <meta property="og:description" content="Découvrez mes réalisations professionnelles et personnelles.">
+    <meta property="og:image" content="https://kylli4n.github.io/assets/preview.jpg">
+
     <style>
+        :root {
+            --main-bg: #121212;
+            --card-bg: #1e1e1e;
+            --accent: #ff6b6b;
+            --text: #ffffff;
+            --muted: #a0a0a0;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            overflow-x: hidden;
             font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
+            background-color: var(--main-bg);
+            color: var(--text);
+            overflow-x: hidden;
         }
-        /* Section - Mes Projets */
-        .projects-container {
+
+        /* --- Section Projets --- */
+        section#projects {
             display: flex;
-            height: 100vh;
             align-items: center;
             justify-content: center;
+            min-height: 90vh;
+            padding: 40px 20px;
+            flex-wrap: wrap;
         }
+
         .text-section {
             flex: 1;
-            padding: 20px;
+            padding: 40px;
             background-color: #2c2c2c;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            border-radius: 15px;
+            min-width: 300px;
         }
+
         .text-section h1 {
             font-size: 48px;
-            margin: 0;
+            margin-bottom: 20px;
         }
+
         .text-section p {
             font-size: 18px;
-            color: #a0a0a0;
+            color: var(--muted);
+            line-height: 1.5;
         }
+
         .image-section {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #121212;
-        }
-        .image-section img {
-            max-width: 100%;
-            height: auto;
+            padding: 20px;
+            min-width: 300px;
         }
 
-        /* Section - Caractéristiques */
-        .features-container {
-            text-align: center;
-            padding: 50px 0;
+        /* Spinner */
+        .spinner {
+            width: 70px;
+            height: 70px;
+            --clr: var(--accent);
+            --clr-alpha: rgba(255, 107, 107, 0.1);
+            animation: spinner 1.6s infinite ease;
+            transform-style: preserve-3d;
+            position: relative;
         }
-        .features-container h1 {
-            font-size: 48px;
+
+        .spinner > div {
+            background-color: var(--clr-alpha);
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            border: 3.5px solid var(--clr);
+        }
+
+        .spinner div:nth-of-type(1) { transform: translateZ(-35px) rotateY(180deg); }
+        .spinner div:nth-of-type(2) { transform: rotateY(-270deg) translateX(50%); transform-origin: top right; }
+        .spinner div:nth-of-type(3) { transform: rotateY(270deg) translateX(-50%); transform-origin: center left; }
+        .spinner div:nth-of-type(4) { transform: rotateX(90deg) translateY(-50%); transform-origin: top center; }
+        .spinner div:nth-of-type(5) { transform: rotateX(-90deg) translateY(50%); transform-origin: bottom center; }
+        .spinner div:nth-of-type(6) { transform: translateZ(35px); }
+
+        @keyframes spinner {
+            0% { transform: rotate(45deg) rotateX(-25deg) rotateY(25deg); }
+            50% { transform: rotate(45deg) rotateX(-385deg) rotateY(25deg); }
+            100% { transform: rotate(45deg) rotateX(-385deg) rotateY(385deg); }
+        }
+
+        /* --- Section Caractéristiques --- */
+        section#features {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        section#features h1 {
+            font-size: 42px;
             margin-bottom: 10px;
         }
-        .features-container hr {
-            width: 50px;
-            border: 2px solid #ffffff;
-            margin: 0 auto 50px;
+
+        section#features hr {
+            width: 60px;
+            border: 2px solid var(--text);
+            margin: 0 auto 40px;
         }
+
         .features {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 40px;
+            flex-wrap: wrap;
         }
+
         .feature {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
             width: 250px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.3);
+        }
+
         .feature img {
             width: 100px;
             height: 100px;
             margin-bottom: 20px;
         }
+
         .feature h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
+            font-size: 22px;
+            margin-bottom: 15px;
         }
-        .feature .button {
+
+        .button {
             display: inline-block;
-            background-color: #ff6b6b;
-            border: none;
-            color: #ffffff;
+            background-color: var(--accent);
+            color: #fff;
             padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
+            border-radius: 8px;
             text-decoration: none;
-            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-        .feature .button:hover {
+
+        .button:hover {
             background-color: #ff4a4a;
         }
-        /* Spinner */
-        .spinner {
-        width: 70.4px;
-        height: 70.4px;
-        --clr: red;
-        --clr-alpha: rgba(255, 0, 0, 0.1);
-        animation: spinner 1.6s infinite ease;
-        transform-style: preserve-3d;
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            section#projects {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .text-section {
+                background: none;
+                padding: 20px;
+            }
+
+            .image-section {
+                margin-top: 30px;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 80%;
+            }
         }
 
-        .spinner > div {
-        background-color: var(--clr-alpha);
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        border: 3.5px solid var(--clr);
-        }
-
-        .spinner div:nth-of-type(1) {
-        transform: translateZ(-35.2px) rotateY(180deg);
-        }
-
-        .spinner div:nth-of-type(2) {
-        transform: rotateY(-270deg) translateX(50%);
-        transform-origin: top right;
-        }
-
-        .spinner div:nth-of-type(3) {
-        transform: rotateY(270deg) translateX(-50%);
-        transform-origin: center left;
-        }
-
-        .spinner div:nth-of-type(4) {
-        transform: rotateX(90deg) translateY(-50%);
-        transform-origin: top center;
-        }
-
-        .spinner div:nth-of-type(5) {
-        transform: rotateX(-90deg) translateY(50%);
-        transform-origin: bottom center;
-        }
-
-        .spinner div:nth-of-type(6) {
-        transform: translateZ(35.2px);
-        }
-
-        @keyframes spinner {
-        0% {
-            transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
-        }
-
-        50% {
-            transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
-        }
-
-        100% {
-            transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
-        }
-        }
-
-        /* Footer */
-        .footer {
+        /* --- Footer --- */
+        footer {
+            background-color: #1a1a1a;
             text-align: center;
-            padding: 20px;
-            background-color: #1e1e1e;
-            margin-top: 20px;
+            padding: 30px 20px;
+            color: var(--muted);
         }
-        .footer p {
-            margin: 0;
-            color: #888;
+
+        footer .logo {
+            font-size: 18px;
+            margin-bottom: 10px;
         }
+
+        footer .footer-links {
+            margin: 10px 0;
+        }
+
+        footer .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s;
+        }
+
+        footer .footer-links a:hover {
+            color: var(--accent);
+        }
+
     </style>
 </head>
 <body>
-        <!-- Navbar -->
+
+    <!-- Navbar -->
     <div class="navbar">
         <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
 
@@ -192,13 +239,13 @@
             <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
             <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
             <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+            <li><a href="Veille.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
         </ul>
 
         <a class="contact" href="Contact.html">Contact</a>
     </div>
 
-    <!-- Script JS menu responsive -->
+    <!-- Script menu responsive -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
@@ -209,65 +256,56 @@
         });
     </script>
 
-
-    <!-- Section: Mes Projets -->   
-    <div class="projects-container">
+    <!-- Section Mes Projets -->
+    <section id="projects">
         <div class="text-section">
             <h1>Mes projets</h1>
-            <p>Vous trouverez les projets que j'ai faits au cours de ma formation, en activité professionnelle et personnelle.</p>
+            <p>Découvrez mes réalisations techniques et créatives issues de ma formation, de mes expériences professionnelles et de mes projets personnels.</p>
         </div>
         <div class="image-section">
-            <!-- Spinner remplaçant l'image -->
             <div class="spinner">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                <div></div><div></div><div></div><div></div><div></div><div></div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Section: Caractéristiques -->
-    <div class="features-container">
+    <!-- Section Caractéristiques -->
+    <section id="features">
         <h1>Caractéristiques</h1>
         <hr/>
         <div class="features">
             <div class="feature">
-                <img alt="Icon of a person in front of a computer screen" src="https://storage.googleapis.com/a1aa/image/kHHurd597P7pBdFDTJmKbWr3oMPqpspqkVf0QhbeVxa5eGpnA.jpg" />
+                <img alt="Icone formation" src="https://storage.googleapis.com/a1aa/image/kHHurd597P7pBdFDTJmKbWr3oMPqpspqkVf0QhbeVxa5eGpnA.jpg" />
                 <h2>Formation</h2>
-                <a href="Projet Formaltion.html" class="button">Savoir</a>
+                <a href="Projet Formaltion.html" class="button">Découvrir</a>
             </div>
             <div class="feature">
-                <img alt="Icon of a group of professionals discussing" src="https://storage.googleapis.com/a1aa/image/FUelYUCFPdynCit2OfTBmzpm3riffYtPnPbRfjs7Yy3T3bkeE.jpg" />
+                <img alt="Icone professionnel" src="https://storage.googleapis.com/a1aa/image/FUelYUCFPdynCit2OfTBmzpm3riffYtPnPbRfjs7Yy3T3bkeE.jpg" />
                 <h2>Professionnel</h2>
-                <a href="Projet professionnel.html" class="button">Savoir</a>
+                <a href="Projet professionnel.html" class="button">Découvrir</a>
             </div>
             <div class="feature">
-                <img alt="Icon of a game controller with lightning bolts" src="https://storage.googleapis.com/a1aa/image/QIjIqZHx3T5wFx9zuP41ckkr1aLZjVAhcTyMQ6lver8bvR6JA.jpg" />
+                <img alt="Icone personnel" src="https://storage.googleapis.com/a1aa/image/QIjIqZHx3T5wFx9zuP41ckkr1aLZjVAhcTyMQ6lver8bvR6JA.jpg" />
                 <h2>Personnel</h2>
-                <a href="Projet Perso.html" class="button">Savoir</a>
+                <a href="Profilperso.html" class="button">Découvrir</a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
-    <div class="footer-content">
+    <footer>
         <div class="logo">
-        <i class="fas fa-shield-alt"></i>
-        <span><strong>Kyllian.Dev</strong></span>
+            <i class="fas fa-shield-alt"></i>
+            <span><strong>Kyllian.Dev</strong></span>
         </div>
 
         <div class="footer-links">
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Politique de cookies</a>
-        <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Cookies</a>
+            <a href="#">Mentions légales</a>
         </div>
 
         <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
-    </div>
     </footer>
 </body>
 </html>

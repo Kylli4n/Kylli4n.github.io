@@ -1,224 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contactez-moi | Kyllian.Dev</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
 
-    <title>Contactez-moi</title>
-<style>
-    /* Ajout d'une animation de fond avec des couleurs contrastées */
+  <style>
     @keyframes gradientAnimation {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* Mettre le fond animé sur toute la page */
     body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(45deg, #3bf507, #0073ff, #ae0e1c);
-        background-size: 400% 400%;
-        animation: gradientAnimation 15s ease infinite;
-        /* Augmenter la vitesse de l'animation pour des vagues plus visibles */
-        animation-duration: 8s;
-        /* Ajouter une animation de vague à l'arrière-plan */
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(45deg, #3bf507, #0073ff, #ae0e1c);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      background-attachment: fixed;
+      color: #fff;
+      overflow-x: hidden;
     }
 
-    /* Conteneur principal de la section contact */
     .contact-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        color: #ffffff;
-        padding: 50px 20px;
-        text-align: center;
-        box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 120px);
+      padding: 60px 20px;
+      text-align: center;
     }
 
-    .contact-container h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-    }
-
-    /* Conteneur pour les informations de contact et le formulaire */
     .container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 100%;
-        max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     }
 
     .contact-info, .contact-form {
-        width: 45%;
-        margin: 0 20px;
+      width: 45%;
+      margin: 10px;
     }
 
-    /* Style des informations de contact */
     .contact-info h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
+      font-size: 36px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #00bcd4;
+      display: inline-block;
+      padding-bottom: 5px;
     }
 
     .contact-info p {
-        font-size: 18px;
-        margin: 20px 0;
-        display: flex;
-        align-items: center;
+      font-size: 18px;
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f1f1f1;
     }
 
     .contact-info p i {
-        margin-right: 10px;
+      margin-right: 10px;
+      color: #00bcd4;
     }
 
-    .contact-info .social-icons {
-        display: flex;
-        margin-top: 20px;
+    .social-icons {
+      margin-top: 25px;
     }
 
-    .contact-info .social-icons a {
-        color: #ffffff;
-        font-size: 24px;
-        margin-right: 15px;
+    .social-icons a {
+      color: #fff;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s, transform 0.3s;
     }
 
-    /* Style du formulaire de contact */
+    .social-icons a:hover {
+      color: #00bcd4;
+      transform: scale(1.2);
+    }
+
     .contact-form form {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
     }
 
-    .contact-form form input, .contact-form form textarea {
-        background-color: #1a1a1a;
-        border: 1px solid #ffffff;
-        color: #ffffff;
-        font-size: 16px;
-        margin-bottom: 20px;
-        padding: 10px;
+    .contact-form input,
+    .contact-form textarea {
+      background-color: rgba(30, 30, 30, 0.8);
+      border: 1px solid #fff;
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 12px;
+      border-radius: 8px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #00bcd4;
+      box-shadow: 0 0 8px #00bcd4;
+    }
+
+    .contact-form input[type="submit"] {
+      background-color: #00bcd4;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .contact-form input[type="submit"]:hover {
+      background-color: #0097a7;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 900px) {
+      .contact-info, .contact-form {
         width: 100%;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
-    .contact-form form input[type="submit"] {
-        background-color: #00bcd4;
-        border: none;
-        color: #ffffff;
-        cursor: pointer;
-        font-size: 16px;
-        padding: 10px 20px;
-    }
-
-    /* Footer */
     .footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
     }
 
     .footer a {
-        color: #fff;
-        margin: 0 10px;
+      color: #00bcd4;
+      text-decoration: none;
+      margin: 0 10px;
     }
-</style>
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .success-message {
+      color: #00ffae;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    .error-message {
+      color: #ff5555;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
 </head>
 <body>
 
-        <!-- Navbar -->
-    <div class="navbar">
-        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
+  <!-- Navbar -->
+  <div class="navbar">
+    <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50" />
 
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <ul id="menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
-            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
-            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
-            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
-        </ul>
-
-        <a class="contact" href="Contact.html">Contact</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span><span></span><span></span>
     </div>
 
-    <!-- Script JS menu responsive -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+    <ul id="menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+      <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+      <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+      <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+      <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+    </ul>
 
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-    </script>
+    <a class="contact" href="Contact.html">Contact</a>
+  </div>
 
-    <!-- Contact Section -->
-    <div class="contact-container">
-        <div class="container">
-            <div class="contact-info">
-                <h1>Me contacter</h1>
-                <p><i class="fas fa-map-marker-alt"></i> ** ****** ******</p>
-                <p><i class="fas fa-phone"></i> 06 ** ** ** 17</p>
-                <p><i class="fas fa-envelope"></i> ****@gmail.com</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <div style="display: flex; justify-content: space-between;">
-                        <input type="text" name="first_name" placeholder="Prénom *" style="width: 48%;" required>
-                        <input type="text" name="last_name" placeholder="Nom de famille *" style="width: 48%;" required>
-                    </div>
-                    <input type="email" name="email" placeholder="E-mail *" required>
-                    <textarea name="message" placeholder="Message *" rows="5" required></textarea>
-                    <input type="submit" value="Envoyer">
-                </form>
-            </div>
+  <!-- Menu responsive -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  </script>
+
+  <!-- Section Contact -->
+  <div class="contact-container">
+    <div class="container">
+      <div class="contact-info">
+        <h1>Me contacter</h1>
+        <p><i class="fas fa-map-marker-alt"></i> ** ****** ******</p>
+        <p><i class="fas fa-phone"></i> 06 ** ** ** 17</p>
+        <p><i class="fas fa-envelope"></i> ****@gmail.com</p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-    </div>
+      </div>
 
-    <!-- Footer -->
-    <footer class="footer">
+      <div class="contact-form">
+        <form id="contact-form">
+          <div style="display: flex; gap: 4%;">
+            <input type="text" name="first_name" placeholder="Prénom *" required style="width: 48%;" />
+            <input type="text" name="last_name" placeholder="Nom *" required style="width: 48%;" />
+          </div>
+          <input type="email" name="email" placeholder="E-mail *" required />
+          <textarea name="message" placeholder="Message *" rows="5" required></textarea>
+          <input type="submit" value="Envoyer" />
+          <div id="response-message"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-content">
-        <div class="logo">
+      <div class="logo">
         <i class="fas fa-shield-alt"></i>
         <span><strong>Kyllian.Dev</strong></span>
-        </div>
+      </div>
 
-        <div class="footer-links">
+      <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
-        <a href="#">Politique de cookies</a>
+        <a href="#">Cookies</a>
         <a href="#">Mentions légales</a>
-        </div>
+      </div>
 
-        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
+      <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
-    </footer>
+  </footer>
+
+  <!-- === EmailJS === -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("TON_USER_ID"); // 🔹 Remplace par ton ID EmailJS
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm('TON_SERVICE_ID', 'TON_TEMPLATE_ID', this)
+        .then(function() {
+          document.getElementById('response-message').innerHTML =
+            '<p class="success-message">✅ Message envoyé avec succès !</p>';
+        }, function(error) {
+          document.getElementById('response-message').innerHTML =
+            '<p class="error-message">❌ Une erreur est survenue, veuillez réessayer.</p>';
+          console.error('Erreur EmailJS:', error);
+        });
+
+      this.reset();
+    });
+  </script>
 
 </body>
 </html>

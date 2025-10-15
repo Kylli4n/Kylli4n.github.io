@@ -1,92 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets Profosionnel</title>
+    <title>Projets Professionnels | Kyllian.Dev</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-</head>
+
+    <!-- Meta SEO -->
+    <meta name="description" content="Découvrez mes projets professionnels réalisés lors de stages et expériences en entreprise.">
+    <meta property="og:title" content="Projets Professionnels | Kyllian.Dev">
+    <meta property="og:description" content="Découvrez mes projets en entreprise et les compétences mobilisées lors de leur réalisation.">
+    <meta property="og:image" content="https://kylli4n.github.io/assets/preview.jpg">
+
     <style>
+        :root {
+            --main-bg: #121212;
+            --card-bg: #1e1e1e;
+            --accent: #ff6b6b;
+            --text: #ffffff;
+            --muted: #b0b0b0;
+            --highlight: #ffcc00;
+        }
+
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1c1c1c;
-            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--main-bg);
+            color: var(--text);
         }
+
         .container {
-            width: 80%;
+            width: 85%;
             margin: 0 auto;
-            padding-top: 20px;
+            padding: 60px 0;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
+
         .title {
             font-size: 48px;
             font-weight: bold;
-            margin: 20px 0;
+            text-align: center;
+            margin-bottom: 10px;
         }
+
         .subtitle {
             font-size: 36px;
-            font-weight: bold;
-            margin: 10px 0;
+            text-align: center;
+            color: var(--accent);
+            margin-bottom: 20px;
         }
+
         .description {
+            text-align: center;
             font-size: 18px;
-            color: #b0b0b0;
-            margin-bottom: 40px;
+            color: var(--muted);
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.6;
         }
+
+        /* --- Projects grid --- */
         .projects {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
             justify-content: center;
         }
+
         .project {
-            background-color: #000000;
-            margin: 10px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
             width: 45%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .project-details {
-            padding: 20px;
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
         }
-        .project-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 0 10px 0;
-        }
-        .project-client,
-        .project-request {
-            font-size: 16px;
-            margin: 5px 0;
-        }
+
         .project img {
             width: 100%;
-            height: 400px; /* Ajustez la hauteur selon vos besoins */
-            object-fit: cover; /* Assurez-vous que l'image conserve un bon cadrage */
-        }
-        .project-competences, .project-result {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #d0d0d0;
+            height: 350px;
+            object-fit: cover;
         }
 
-        .project-competences ul {
-            padding-left: 20px;
+        .project-details {
+            padding: 25px;
         }
 
-        .project-competences li {
-            margin-bottom: 5px;
+        .project-title a {
+            color: var(--accent);
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
         }
-        .project-competences, .project-result {
+
+        .project-title a:hover {
+            text-decoration: underline;
+        }
+
+        .project-client,
+        .project-request,
+        .project-category {
+            font-size: 16px;
+            color: var(--muted);
+            margin: 8px 0;
+        }
+
+        .project-competences,
+        .project-result {
             background-color: #2c2c2c;
-            padding: 15px 20px;
+            padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
             font-size: 15px;
@@ -94,11 +122,12 @@
             color: #e0e0e0;
         }
 
-        .project-competences strong, .project-result strong {
+        .project-competences strong,
+        .project-result strong {
             display: block;
             font-size: 18px;
             margin-bottom: 10px;
-            color: #ffcc00; /* jaune doré pour les titres */
+            color: var(--highlight);
         }
 
         .project-competences ul {
@@ -111,19 +140,35 @@
             list-style-type: disc;
         }
 
-        .project-result p {
-            margin: 0;
-        }
-        @media (max-width: 768px) {
+        /* Responsive */
+        @media (max-width: 1024px) {
             .project {
                 width: 100%;
             }
         }
 
+        @media (max-width: 600px) {
+            .title {
+                font-size: 36px;
+            }
 
+            .subtitle {
+                font-size: 28px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .project img {
+                height: 250px;
+            }
+        }
     </style>
+</head>
+
 <body>
-        <!-- Navbar -->
+    <!-- Navbar -->
     <div class="navbar">
         <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
 
@@ -139,13 +184,13 @@
             <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
             <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
             <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+            <li><a href="Veille technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
         </ul>
 
         <a class="contact" href="Contact.html">Contact</a>
     </div>
 
-    <!-- Script JS menu responsive -->
+    <!-- Script menu responsive -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
@@ -156,88 +201,72 @@
         });
     </script>
 
-    <!-- Header Section -->
+    <!-- Contenu principal -->
     <div class="container">
-        <div class="title">
-            Projets
-        </div>
-        <div class="subtitle">
-            Professionnels
-        </div>
+        <div class="title">Projets</div>
+        <div class="subtitle">Professionnels</div>
         <div class="description">
-            Vous trouverez ci-dessous les projets faits ou en cours, lors de mes stages ou dans le milieu professionnel.
+            Vous trouverez ci-dessous les projets réalisés lors de mes stages et expériences professionnelles, avec les compétences mobilisées et les résultats obtenus.
         </div>
 
-        <!-- Projects Section -->
         <div class="projects">
             <!-- Projet 1 -->
             <div class="project">
-                <img alt="Image of a cathedral with a blue sky background" src="https://storage.googleapis.com/a1aa/image/LCwL5l8vMZqSNdPU5USrfTuKgCOL0nNjzpMetTHvc6LOEfqnA.jpg"/>
+                <img alt="Abbaye de Limoges en VR" src="https://storage.googleapis.com/a1aa/image/LCwL5l8vMZqSNdPU5USrfTuKgCOL0nNjzpMetTHvc6LOEfqnA.jpg"/>
                 <div class="project-details">
                     <div class="project-title">
-                        <a href="page projet abbay.html">Abbaye Limoges (Terminer)</a>
+                        <a href="page-projet-abbaye.html">Abbaye de Limoges (Terminé)</a>
                     </div>
-                    <div class="project-client">
-                        Client : la ville de Limoges
-                    </div>
-                    <div class="project-request">
-                        Demande : recréer l'abbaye de Limoges (Saint-Martial) en Réalité Virtuelle
-                    </div>
-                    <div class="project-category">
-                        Catégorie : Stage
-                    </div>
-                    
-                    <!-- Compétences mobilisées -->
+                    <div class="project-client">Client : Ville de Limoges</div>
+                    <div class="project-request">Demande : recréer l’abbaye Saint-Martial en réalité virtuelle.</div>
+                    <div class="project-category">Catégorie : Stage</div>
+
                     <div class="project-competences">
                         <strong>Compétences mobilisées :</strong>
                         <ul>
-                            <li>B1.1 Gérer le patrimoine informatique -> j’ai organisé les fichiers 3D, géré les versions du projet, et assuré la sauvegarde régulière des données.</li>
-                            <li>B1.2 Répondre aux incidents et aux demandes -> j’ai corrigé des bugs liés aux textures, aux collisions, et répondu aux demandes de modifications des tuteurs.</li>
-                            <li>B1.4 Travailler en mode projet -> j’ai respecté un planning, travaillé en collaboration avec d’autres intervenants comme des historiens.</li>
-                            <li>B1.6 Organiser son développement professionnel -> j’ai appris à utiliser de nouveaux outils comme Unity, suivi des tutoriels sur la modélisation 3D, et approfondi mes compétences en VR.</li>
+                            <li><b>B1.1</b> Gérer le patrimoine informatique : organisation des fichiers 3D, gestion de versions et sauvegardes.</li>
+                            <li><b>B1.2</b> Répondre aux incidents : correction de bugs sur textures et collisions.</li>
+                            <li><b>B1.4</b> Travailler en mode projet : respect du planning, coordination avec des historiens.</li>
+                            <li><b>B1.6</b> Organiser son développement professionnel : apprentissage d’Unity, modélisation 3D et VR.</li>
                         </ul>
                     </div>
-                    
-                    <!-- Résultat -->
+
                     <div class="project-result">
                         <strong>Résultat :</strong>
-                        <p>J’ai contribué à livrer une maquette VR complète, permettant de visualiser l’abbaye en immersion. J’ai appris à gérer un projet mêlant techniques et aspects artistiques, et à surmonter des problèmes techniques complexes (comme l’optimisation des performances en VR). Parmi les principales difficultés : optimiser les scènes pour éviter les lags, trouver des ressources 3D de qualité, et gérer les limitations techniques liées aux casques VR.</p>
+                        <p>Livraison d’une maquette VR complète permettant de visualiser l’abbaye en immersion. Le projet a renforcé mes compétences techniques et ma gestion de projets interdisciplinaires (optimisation des performances, intégration de modèles 3D, respect des contraintes techniques VR).</p>
                     </div>
                 </div>
             </div>
+
             <!-- Projet 2 -->
             <div class="project">
-                <img alt="Image of sand dunes in a desert" src="images/ObjectifRéseau.png"/>
+                <img alt="Interface Symfony Objectif Réseau" src="images/ObjectifRéseau.png"/>
                 <div class="project-details">
                     <div class="project-title">
-                        <a href="Documents/📂 Structure du projet Objectif Réseau.pdf" target="_blank">Objectif Réseau (Terminer)</a>
+                        <a href="Documents/Structure_Projet_Objectif_Reseau.pdf" target="_blank">Objectif Réseau (Terminé)</a>
                     </div>
-                    <div class="project-client">
-                        Client : ChevalierB.fr
-                    </div>
+                    <div class="project-client">Client : ChevalierB.fr</div>
                     <div class="project-request">
-                        Objectif : Concevoir une plateforme Symfony pour gérer les événements, utilisateurs, rôles et invitations au sein de l’entreprise Chevalierb.fr. Le projet visait à optimiser l’organisation des événements et la gestion des participants, avec une interface web sécurisée et fluide.
+                        Objectif : concevoir une plateforme Symfony pour gérer les événements, utilisateurs, rôles et invitations au sein de l’entreprise.
                     </div>
-                    <div class="project-category">
-                        Catégorie : Stage
+                    <div class="project-category">Catégorie : Stage</div>
+
+                    <div class="project-competences">
+                        <strong>Compétences mobilisées :</strong>
+                        <ul>
+                            <li><b>B1.1</b> Gérer le patrimoine informatique : conception et gestion d’une base de données complexe (Doctrine ORM).</li>
+                            <li><b>B1.2</b> Répondre aux incidents : correction de bugs d’authentification et optimisation Symfony.</li>
+                            <li><b>B1.3</b> Développer la présence en ligne : intégration de Symfony UX, notifications dynamiques.</li>
+                            <li><b>B1.4</b> Travailler en mode projet : utilisation de Git, structuration MVC, documentation technique.</li>
+                            <li><b>B1.5</b> Mettre à disposition un service informatique : système d’authentification et gestion des rôles sécurisée.</li>
+                            <li><b>B1.6</b> Organiser son développement : approfondissement de Symfony, PHPUnit et outils de débogage.</li>
+                        </ul>
                     </div>
-                </div>
-                <!-- Compétences mobilisées -->
-                <div class="project-competences">
-                    <strong>Compétences mobilisées :</strong>
-                    <ul>
-                        <li>B1.1 Gérer le patrimoine informatique -> conception et gestion d’une base de données complexe (Doctrine ORM), intégration des migrations et des relations entre tables (utilisateurs, entreprises, événements).</li>
-                        <li>B1.2 Répondre aux incidents et aux demandes -> résolution de bugs liés à l’authentification, gestion des formulaires et optimisation des performances Symfony.</li>
-                        <li>B1.3 Développer la présence en ligne -> amélioration de l’expérience utilisateur avec Symfony UX (Stimulus, Turbo), intégration de notifications et d’interactions dynamiques</li>
-                        <li>B1.4 Travailler en mode projet -> structuration du projet en modules (contrôleurs, entités, repositories), utilisation de Git, rédaction de documentation technique (README).</li>
-                        <li>B1.5 Mettre à disposition des utilisateurs un service informatique -> mise en place d’un système d’authentification et de gestion des rôles pour sécuriser l’accès.</li>
-                        <li>B1.6 Organiser son développement professionnel -> approfondissement des compétences Symfony, découverte de PHPUnit pour les tests et prise en main des outils de debug avancés.</li>
-                    </ul>
-                </div>                
-                <!-- Résultat -->
-                <div class="project-result">
-                    <strong>Résultat :</strong>
-                    <p>J’ai livré une plateforme permettant de gérer les inscriptions aux événements, les invitations et les rôles utilisateurs. J’ai appris à maîtriser Symfony, à structurer un projet de grande ampleur, et à implémenter des systèmes sécurisés et performants. Les principaux défis ont porté sur la gestion fine des rôles et des droits d’accès, ainsi que l’optimisation des interactions front-end.</p>
+
+                    <div class="project-result">
+                        <strong>Résultat :</strong>
+                        <p>Livraison d’une plateforme fonctionnelle et sécurisée de gestion d’événements internes. Projet réalisé avec succès, consolidant mes compétences Symfony, la logique MVC, et l’intégration d’outils front-end modernes.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -245,20 +274,20 @@
 
     <!-- Footer -->
     <footer class="footer">
-    <div class="footer-content">
-        <div class="logo">
-        <i class="fas fa-shield-alt"></i>
-        <span><strong>Kyllian.Dev</strong></span>
-        </div>
+        <div class="footer-content">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span><strong>Kyllian.Dev</strong></span>
+            </div>
 
-        <div class="footer-links">
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Politique de cookies</a>
-        <a href="#">Mentions légales</a>
-        </div>
+            <div class="footer-links">
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Cookies</a>
+                <a href="#">Mentions légales</a>
+            </div>
 
-        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
-    </div>
+            <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
+        </div>
     </footer>
 </body>
 </html>

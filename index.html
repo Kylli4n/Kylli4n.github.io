@@ -14,6 +14,99 @@
             background-color: #0d0d0d;
             color: white;
         }
+
+        /* --- Navbar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #121212;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar img {
+            height: 50px;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #00a6ff;
+        }
+        .contact {
+            background-color: #00a6ff;
+            padding: 8px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .contact:hover {
+            background-color: #ff0000;
+        }
+
+        /* --- Section gauche avec animation CSS --- */
+        /*.left-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #1e1e1e, #00a6ff, #ff0000, #1e1e1e);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .left-section h1 {
+            font-size: 2.8em;
+            margin: 0;
+        }
+
+        .left-section p {
+            font-size: 1.1em;
+            margin: 15px 0;
+            max-width: 600px;
+        }
+
+        .left-section button {
+            background-color: #00d4ff;
+            color: #0d0d0d;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .left-section button:hover {
+            background-color: #e24a4a;
+            color: white;
+        }
+        */
+        /* --- Intro Content --- */
         .content {
             text-align: center;
             padding: 120px 20px;
@@ -53,80 +146,114 @@
         .content .btn:hover {
             background-color: #357ABD;
         }
-        .container {
+
+        /* --- Compétences --- */
+        .skills-section {
+            position: relative;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(120deg, #0d0d0d, #1c1c1c);
+        }
+        .skills-section .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(0,0,0,0.85), rgba(0,100,255,0.25));
+            backdrop-filter: blur(3px);
+            animation: gradientFlow 10s ease-in-out infinite;
+            background-size: 200% 200%;
+            z-index: 0;
+        }
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .skills-content {
+            position: relative;
+            z-index: 1;
             display: flex;
             flex-wrap: wrap;
-            height: 100vh;
-        }
-        .left-section {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            gap: 50px;
+            justify-content: space-around;
             align-items: center;
-            background: url('images/fondAcceuil.jpg') no-repeat center center;
-            background-size: cover;
-            padding: 20px;
+            padding: 60px 20px;
+            width: 100%;
+            max-width: 1300px;
+        }
+        .skills-text {
+            flex: 1;
+            min-width: 320px;
             text-align: center;
         }
-        .left-section h1 {
-            font-size: 2.5em;
-            margin: 0;
+        .skills-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(0,200,255,0.4);
         }
-        .left-section p {
-            font-size: 1.1em;
-            margin: 15px 0;
+        .skills-text p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
-        .left-section button {
+        .skills-text button {
             background-color: #00d4ff;
             color: #0d0d0d;
             border: none;
-            padding: 12px 24px;
-            font-size: 1em;
+            padding: 12px 26px;
+            font-size: 1.1em;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
         }
-        .left-section button:hover {
-            background-color: #e24a4a;
-            color: white;
+        .skills-text button:hover {
+            background-color: #009fe3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6);
         }
-        .right-section {
+        .skills-cards {
             flex: 1;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
+            gap: 25px;
         }
-        .card {
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            width: 200px;
+        .skills-cards .card {
+            background: rgba(30, 30, 30, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            width: 220px;
             text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(74, 144, 226, 0.5);
+        .skills-cards .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 25px rgba(0,200,255,0.4);
         }
-        .card i {
-            font-size: 2em;
+        .skills-cards i {
+            font-size: 2.3em;
+            margin-bottom: 15px;
+            color: #00b8ff;
+        }
+        .skills-cards h3 {
             margin-bottom: 10px;
-            color: #4a90e2;
+            font-size: 1.3em;
         }
-        .card h3 {
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-        .card p {
+        .skills-cards p {
             font-size: 0.9em;
             color: #b0b0b0;
+            line-height: 1.4;
         }
+
+        /* --- Footer --- */
         .footer {
             background-color: #1c1c1c;
             padding: 20px;
@@ -160,16 +287,10 @@
     </style>
 </head>
 <body>
+
     <!-- Navbar -->
     <div class="navbar">
-        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
-
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
+        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" />
         <ul id="menu">
             <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
             <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
@@ -178,23 +299,18 @@
             <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
             <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
         </ul>
-
         <a class="contact" href="Contact.html">Contact</a>
     </div>
 
-    <!-- Script JS menu responsive -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+    <!-- Section gauche avec animation -->
+    <!-- <div class="left-section">
+        <h1>Bienvenue sur mon portfolio</h1>
+        <p>Développeur passionné et curieux, je crée des projets modernes et sécurisés.</p>
+        <button onclick="window.location.href='Profilperso.html'">Découvrir</button>
+    </div>*/
+     -->
 
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-    </script>
-
-
-    <!-- Intro Content -->
+    <!-- Intro -->
     <div class="content">
         <h2>Bonjour, je suis</h2>
         <h1>Chrétien Kyllian</h1>
@@ -203,53 +319,52 @@
         <a class="btn" href="Profilperso.html">Découvrir mon parcours</a>
     </div>
 
-    <!-- Competences Section -->
-    <div class="container">
-        <div class="left-section">
-            <h1>Compétences clés</h1>
-            <p>Découvrez les domaines dans lesquels je continue d’évoluer et de me perfectionner.</p>
-            <button onclick="window.location.href='Competence.html';">Voir les compétences</button>
+    <!-- Compétences -->
+    <section class="skills-section">
+        <div class="overlay"></div>
+        <div class="skills-content">
+            <div class="skills-text">
+                <h1>Compétences clés</h1>
+                <p>Découvrez les domaines dans lesquels je continue d’évoluer et de me perfectionner.</p>
+                <button onclick="window.location.href='Competence.html';">Voir les compétences</button>
+            </div>
+            <div class="skills-cards">
+                <div class="card">
+                    <i class="fas fa-code"></i>
+                    <h3>HTML / CSS</h3>
+                    <p>Création d’interfaces modernes et adaptatives.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>JavaScript</h3>
+                    <p>Interactions dynamiques côté client.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-database"></i>
+                    <h3>PHP / MySQL</h3>
+                    <p>Développement côté serveur et gestion de bases de données.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Cybersécurité</h3>
+                    <p>Analyse de vulnérabilités, sensibilisation et bonnes pratiques.</p>
+                </div>
+            </div>
         </div>
-        <div class="right-section">
-            <div class="card">
-                <i class="fas fa-code"></i>
-                <h3>HTML / CSS</h3>
-                <p>Création d’interfaces modernes et adaptatives.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-layer-group"></i>
-                <h3>JavaScript</h3>
-                <p>Interactions dynamiques côté client.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-database"></i>
-                <h3>PHP / MySQL</h3>
-                <p>Développement côté serveur et gestion de bases de données.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-user-shield"></i>
-                <h3>Cybersécurité</h3>
-                <p>Analyse de vulnérabilités, sensibilisation et bonnes pratiques.</p>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-    <div class="footer-content">
         <div class="logo">
-        <i class="fas fa-shield-alt"></i>
-        <span><strong>Kyllian.Dev</strong></span>
+            <i class="fas fa-shield-alt"></i>
+            <span><strong>Kyllian.Dev</strong></span>
         </div>
-
         <div class="footer-links">
-        <a href="#">Politique de confidentialité</a>
-        <a href="#">Politique de cookies</a>
-        <a href="#">Mentions légales</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#">Cookies</a>
+            <a href="#">Mentions légales</a>
         </div>
-
         <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
-    </div>
     </footer>
 </body>
 </html>
