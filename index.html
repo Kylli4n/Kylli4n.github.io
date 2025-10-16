@@ -212,17 +212,38 @@
 
     <!-- Navbar -->
     <div class="navbar">
-        <img alt="Kyllian-Dev Logo" src="images/logo port.png" height="75px"/>
-        <ul id="menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
-            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
-            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
-            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
-        </ul>
-        <a class="contact" href="Contact.html">Contact</a>
+    <img alt="Kyllian-Dev Logo" src="images/logo port.png" height="75px"/>
+
+    <!-- Bouton menu burger -->
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+
+    <ul id="menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+        <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+        <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+        <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+        <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+    </ul>
+
+    <a class="contact" href="Contact.html">Contact</a>
+    </div>
+
+    <!-- Script JS menu responsive -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    </script>
+
 
     <!-- Intro -->
     <div class="content">
