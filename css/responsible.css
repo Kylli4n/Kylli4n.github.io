@@ -2,38 +2,98 @@
 /*   RESPONSIVE GLOBAL  */
 /* ==================== */
 
-/* Tablettes */
+/* Tablettes et petits écrans */
 @media (max-width: 1024px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
+  .page-content {
+    margin-top: 80px;
   }
 
-  main {
-    padding: 20px;
+  .background {
+    top: 80px;
+    height: calc(100vh - 80px);
+  }
+
+  .about-me {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .timeline-container {
+    padding: 15px;
   }
 }
 
 /* Smartphones */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
     font-size: 14px;
+    overflow-x: hidden;
   }
 
-  header img {
-    height: 40px;
+  /* === NAVBAR BURGER === */
+  #menu {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
   }
 
-  nav ul {
-    display: none; /* tu pourras remplacer ça plus tard par un menu burger */
+  #menu.active {
+    display: flex;
   }
 
-  footer {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    background: #fff;
+  }
+
+  /* === CONTENU PRINCIPAL === */
+  .page-content {
+    margin-top: 70px;
+  }
+
+  .background {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .profile-card {
+    width: 90%;
+    top: 10px;
+    padding: 20px;
+  }
+
+  .about-me {
+    width: 95%;
+    padding: 20px;
+  }
+
+  /* === TIMELINE === */
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    padding-left: 35px;
+  }
+
+  .timeline-item-content {
+    width: 100%;
+    left: 0;
+  }
+
+  /* === FOOTER === */
+  .footer-content {
     flex-direction: column;
     text-align: center;
-  }
-
-  section {
-    margin: 10px 0;
   }
 }
