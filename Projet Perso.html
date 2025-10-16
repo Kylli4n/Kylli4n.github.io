@@ -1,240 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets personnels</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
-</head>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets personnels</title>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="Css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
     body {
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 🧩 Correction du chevauchement de la navbar */
+    .page-content {
+      margin-top: 100px; /* 🔧 adapte à la hauteur de ta navbar (souvent 70–100px) */
+    }
+
     /* Animation 1 - Waves */
     .center_div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 5px;
-        }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5px;
+    }
 
-        .wave {
-            width: 1.8rem;
-            height: 150px;
-            background-color: #ff6b6b;
-            margin: 0 4px;
-            border-radius: 0.4rem;
-            animation: wave 1.5s linear infinite;
-            transform-origin: center;
-        }
+    .wave {
+      width: 1.8rem;
+      height: 150px;
+      background-color: #ff6b6b;
+      margin: 0 4px;
+      border-radius: 0.4rem;
+      animation: wave 1.5s linear infinite;
+      transform-origin: center;
+    }
 
-        @keyframes wave {
-            0% {
-                transform: scale(0);
-                filter: hue-rotate(90deg) blur(100px);
-            }
-            25% {
-                transform: scale(0);
-                filter: hue-rotate(120deg) blur(50px);
-            }
-            50% {
-                transform: scale(1);
-                filter: hue-rotate(180deg) blur(25px);
-            }
-            75% {
-                transform: scale(0);
-                filter: hue-rotate(360deg) blur(2px);
-            }
-            100% {
-                transform: scale(0);
-                filter: hue-rotate(0deg) blur(0);
-            }
-        }
+    @keyframes wave {
+      0% {
+        transform: scale(0);
+        filter: hue-rotate(90deg) blur(100px);
+      }
+      25% {
+        transform: scale(0);
+        filter: hue-rotate(120deg) blur(50px);
+      }
+      50% {
+        transform: scale(1);
+        filter: hue-rotate(180deg) blur(25px);
+      }
+      75% {
+        transform: scale(0);
+        filter: hue-rotate(360deg) blur(2px);
+      }
+      100% {
+        transform: scale(0);
+        filter: hue-rotate(0deg) blur(0);
+      }
+    }
 
-        .wave:nth-child(2) { animation-delay: 0.1s; }
-        .wave:nth-child(3) { animation-delay: 0.2s; }
-        .wave:nth-child(4) { animation-delay: 0.3s; }
-        .wave:nth-child(5) { animation-delay: 0.4s; }
-        .wave:nth-child(6) { animation-delay: 0.5s; }
-        .wave:nth-child(7) { animation-delay: 0.6s; }
-        .wave:nth-child(8) { animation-delay: 0.7s; }
-        .wave:nth-child(9) { animation-delay: 0.8s; }
-        .wave:nth-child(10) { animation-delay: 0.9s; }
+    .wave:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+    .wave:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+    .wave:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+    .wave:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+    .wave:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+    .wave:nth-child(7) {
+      animation-delay: 0.6s;
+    }
+    .wave:nth-child(8) {
+      animation-delay: 0.7s;
+    }
+    .wave:nth-child(9) {
+      animation-delay: 0.8s;
+    }
+    .wave:nth-child(10) {
+      animation-delay: 0.9s;
+    }
 
-        /* Solar System Style */
-        .solar-system {
-            position: relative;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px 0;
-        }
+    /* Solar System Style */
+    .solar-system {
+      position: relative;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0;
+    }
 
-        .access-text {
-            font-size: 3em;
-            font-weight: bold;
-            color: #ffffff;
-            text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-            z-index: 10;
-        }
+    .access-text {
+      font-size: 3em;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+      z-index: 10;
+    }
 
-        .planet {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, #ff0, #f00);
-            width: 20px;
-            height: 20px;
-            animation: orbit 6s linear infinite;
-        }
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ff0, #f00);
+      width: 20px;
+      height: 20px;
+      animation: orbit 6s linear infinite;
+    }
 
-        .orbit {
-            animation-timing-function: linear;
-        }
+    .orbit {
+      animation-timing-function: linear;
+    }
 
-        .orbit2 {
-            width: 15px;
-            height: 15px;
-            background: radial-gradient(circle, #0ff, #00f);
-            animation: orbit2 10s linear infinite;
-        }
+    .orbit2 {
+      width: 15px;
+      height: 15px;
+      background: radial-gradient(circle, #0ff, #00f);
+      animation: orbit2 10s linear infinite;
+    }
 
-        @keyframes orbit {
-            0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
-        }
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+      }
+    }
 
-        @keyframes orbit2 {
-            0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
-        }
+    @keyframes orbit2 {
+      0% {
+        transform: rotate(0deg) translateX(60px) rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg) translateX(60px) rotate(-360deg);
+      }
+    }
 
+    /* Animation 2 - Grid Loader */
+    .container-loader {
+      position: relative;
+      transform-style: preserve-3d;
+      overflow: hidden;
+      transform: translateX(0%);
+      animation: perspective 20s linear infinite both;
+      height: 200px;
+      width: 100%;
+      margin: 20px 0;
+    }
 
-        /* Animation 2 - Grid Loader */
-        .container-loader {
-            position: relative;
-            transform-style: preserve-3d;
-            overflow: hidden;
-            transform: translateX(0%);
-            animation: perspective 20s linear infinite both;
-            height: 200px;
-            width: 100%;
-            margin: 20px 0;
-        }
+    .loader {
+      --color: rgb(255, 0, 0);
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: repeating-linear-gradient(
+          transparent 0 30px,
+          var(--color) 31px 32px
+        ),
+        repeating-linear-gradient(
+          to right,
+          transparent 0 30px,
+          var(--color) 31px 32px
+        );
+      border-left: 1px solid var(--color);
+      border-top: 1px solid var(--color);
+      transform: rotateX(37deg);
+      top: 0;
+    }
 
-        .loader {
-            --color: rgb(255, 0, 0);
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background: repeating-linear-gradient(
-                transparent 0 30px,
-                var(--color) 31px 32px
-            ),
-            repeating-linear-gradient(
-                to right,
-                transparent 0 30px,
-                var(--color) 31px 32px
-            );
-            border-left: 1px solid var(--color);
-            border-top: 1px solid var(--color);
-            transform: rotateX(37deg);
-            top: 0;
-        }
-
-        @keyframes perspective {
-            0% {
-                perspective: 1px;
-            }
-            100% {
-                perspective: 50px;
-            }
-        }
-     
-</style>
+    @keyframes perspective {
+      0% {
+        perspective: 1px;
+      }
+      100% {
+        perspective: 50px;
+      }
+    }
+  </style>
 </head>
 <body>
-       <!-- Navbar -->
-    <div class="navbar">
-        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
+  <!-- Navbar -->
+  <div class="navbar">
+     <img alt="Kyllian-Dev Logo" src="images/logo port.png" height="75px"/>
 
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <ul id="menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
-            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
-            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
-            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
-        </ul>
-
-        <a class="contact" href="Contact.html">Contact</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <!-- Script JS menu responsive -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+    <ul id="menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+      <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+      <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+      <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+      <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+    </ul>
 
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-    </script>
+    <a class="contact" href="Contact.html">Contact</a>
+  </div>
 
+  <!-- JS menu responsive -->
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("menu");
+    menuToggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+  </script>
 
+  <!-- 🌌 Contenu principal -->
+  <div class="page-content">
     <!-- Wave Animation -->
     <div class="center_div">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
     </div>
 
-    <!-- Juste après les vagues -->
+    <!-- Solar System -->
     <div class="solar-system">
-        <div class="planet orbit"></div>
-        <div class="planet orbit orbit2"></div>
-        <h1 class="access-text">NO ACCESS at the moment</h1>
+      <div class="planet orbit"></div>
+      <div class="planet orbit orbit2"></div>
+      <h1 class="access-text">NO ACCESS at the moment</h1>
     </div>
 
-    <!-- Grid Loader Animation -->
+    <!-- Grid Loader -->
     <main class="container-loader">
-        <aside class="loader"></aside>
+      <aside class="loader"></aside>
     </main>
+  </div>
 
-    <!-- Footer -->
-    <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-content">
-        <div class="logo">
+      <div class="logo">
         <i class="fas fa-shield-alt"></i>
         <span><strong>Kyllian.Dev</strong></span>
-        </div>
-
-        <div class="footer-links">
+      </div>
+      <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
         <a href="#">Politique de cookies</a>
         <a href="#">Mentions légales</a>
-        </div>
-
-        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
+      </div>
+      <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
-    </footer>
+  </footer>
 </body>
 </html>

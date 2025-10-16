@@ -3,22 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <title>Portfolio - Kyllian Chrétien</title>
+
+  <!-- Icônes et polices -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="Css/navbar.css" />
+  <link rel="stylesheet" href="Css/footer.css" />
+  <link rel="stylesheet" href="Css/responsive.css" />
+
   <style>
+    /* === STYLE GLOBAL === */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       color: #ddd;
       background-color: #0d0d0d;
+      overflow-x: hidden;
     }
 
-    /* Animation de dégradé de fond */
+    /* === ESPACE SOUS NAVBAR === */
+    .page-content {
+      margin-top: 100px; /* Décale tout le contenu sous la navbar fixe */
+    }
+
+    /* === FOND DYNAMIQUE === */
     .background {
-      position: absolute;
+      position: fixed;
+      top: 100px; /* Décalé pour ne pas passer sous la navbar */
       width: 100%;
-      height: 100vh;
+      height: calc(100vh - 100px);
       background: linear-gradient(45deg, #ff0000, #000000, #ff0000, #000000);
       background-size: 400% 400%;
       animation: gradientAnimation 5s ease infinite;
@@ -31,17 +43,17 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* === CARTE PROFIL === */
     .profile-card {
-      position: absolute;
-      bottom: 50%;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
       background-color: rgba(0, 0, 0, 0.8);
       padding: 25px;
       width: 320px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(255,0,0,0.3);
       text-align: left;
+      margin: 0 auto;
+      top: 60px;
     }
 
     .profile-card h1 {
@@ -63,7 +75,7 @@
       color: #ccc;
     }
 
-    /* Bouton CV */
+    /* === BOUTON CV === */
     .cv-button {
       display: inline-block;
       margin-top: 10px;
@@ -75,23 +87,25 @@
       font-size: 14px;
       transition: background 0.3s ease;
     }
+
     .cv-button:hover {
       background-color: #cc0000;
     }
 
-    /* Section "À propos de moi" */
+    /* === SECTION À PROPOS === */
     .about-me {
       text-align: center;
       padding: 30px;
       background-color: #111;
       color: #fff;
       width: 80%;
-      margin: 400px auto 20px;
+      margin: 80px auto 20px;
       border-left: 5px solid #ff0000;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(255,0,0,0.3);
       transition: transform 0.3s ease;
     }
+
     .about-me:hover {
       transform: scale(1.01);
     }
@@ -109,7 +123,7 @@
       line-height: 1.6;
     }
 
-    /* Timeline (Expérience professionnelle) */
+    /* === TIMELINE === */
     .timeline-container {
       position: relative;
       background-color: #1a1a1a;
@@ -188,59 +202,66 @@
       line-height: 1.4;
     }
 
-    /* Responsive */
+    /* === RESPONSIVE === */
     @media (max-width: 768px) {
       .timeline::before {
         left: 5px;
       }
+
       .timeline-item {
         padding-left: 30px;
       }
+
       .timeline-item-content {
         width: 90%;
         left: 0;
+      }
+
+      .profile-card {
+        width: 90%;
+        top: 20px;
       }
     }
   </style>
 </head>
 
 <body>
-      <!-- Navbar -->
-    <div class="navbar">
-        <img alt="Kyllian-Dev Logo" src="https://storage.googleapis.com/a1aa/image/eMdgnqbRWjxNBa3Sq8kyO2I9Axn9EsltNfvXay8hxmRvOLzTA.jpg" height="50"/>
+  <!-- === NAVBAR === -->
+  <div class="navbar">
+    <img alt="Kyllian-Dev Logo" src="images/logo port.png" height="75px"/>
 
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <ul id="menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
-            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
-            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
-            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
-        </ul>
-
-        <a class="contact" href="Contact.html">Contact</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <!-- Script JS menu responsive -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+    <ul id="menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+      <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+      <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+      <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+      <li><a href="Veille technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+    </ul>
 
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        });
-    </script>
+    <a class="contact" href="Contact.html">Contact</a>
+  </div>
 
+  <!-- Script JS menu responsive -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+  </script>
 
-  <!-- Profile Background -->
-  <div class="background">
+  <!-- === CONTENU PRINCIPAL === -->
+  <div class="page-content">
+    <div class="background"></div>
+
     <div class="profile-card">
       <h1>Kyllian Chrétien</h1>
       <h2>Développeur & passionné de cybersécurité</h2>
@@ -249,71 +270,67 @@
       <p><strong>Adresse</strong><br>** ******* *****</p>
       <a class="cv-button" href="Documents/Kyllian Chrétien nouvelle Version.pdf" download>📄 Télécharger mon CV</a>
     </div>
-  </div>
 
-  <!-- About Me Section -->
-  <div class="about-me">
-    <h1>À propos de moi</h1>
-    <p>
-      Je m’appelle <strong>Kyllian Chrétien</strong>, passionné d’informatique depuis plusieurs années.  
-      Issu d’une formation en <strong>BTS SIO</strong>, j’ai acquis de solides compétences en <strong>développement web</strong>, <strong>administration réseau</strong> et <strong>sécurité informatique</strong>.
-    </p>
-    <p>
-      Aujourd’hui, je poursuis mon apprentissage à travers des <strong>projets personnels</strong> et une <strong>veille technologique</strong> active autour de la <strong>cybersécurité</strong>.  
-      Mon objectif est de rejoindre une entreprise où je pourrai continuer à progresser, participer à des projets concrets et renforcer mon expertise technique.
-    </p>
-    <p>
-      Curieux, rigoureux et persévérant, j’aime relever de nouveaux défis et apprendre en continu.  
-      Chaque expérience, qu’elle soit académique, professionnelle ou personnelle, nourrit ma passion pour les technologies et la sécurité numérique.
-    </p>
-  </div>
+    <div class="about-me">
+      <h1>À propos de moi</h1>
+      <p>
+        Je m’appelle <strong>Kyllian Chrétien</strong>, passionné d’informatique depuis plusieurs années.  
+        Issu d’une formation en <strong>BTS SIO</strong>, j’ai acquis de solides compétences en <strong>développement web</strong>, <strong>administration réseau</strong> et <strong>sécurité informatique</strong>.
+      </p>
+      <p>
+        Aujourd’hui, je poursuis mon apprentissage à travers des <strong>projets personnels</strong> et une <strong>veille technologique</strong> active autour de la <strong>cybersécurité</strong>.  
+        Mon objectif est de rejoindre une entreprise où je pourrai continuer à progresser, participer à des projets concrets et renforcer mon expertise technique.
+      </p>
+      <p>
+        Curieux, rigoureux et persévérant, j’aime relever de nouveaux défis et apprendre en continu.  
+        Chaque expérience, qu’elle soit académique, professionnelle ou personnelle, nourrit ma passion pour les technologies et la sécurité numérique.
+      </p>
+    </div>
 
-  <!-- Timeline Section -->
-  <div class="timeline-container">
-    <h1>Expérience professionnelle</h1>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-item-content">
-          <div class="date">2019 / 2020</div>
-          <strong>Stagiaire - SARL Baron | Sainte-Croix-en-Plaine</strong>
-          <p>Découverte du fonctionnement d’un réseau d’entreprise et participation à la maintenance du parc informatique.</p>
+    <div class="timeline-container">
+      <h1>Expérience professionnelle</h1>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-item-content">
+            <div class="date">2019 / 2020</div>
+            <strong>Stagiaire - SARL Baron | Sainte-Croix-en-Plaine</strong>
+            <p>Découverte du fonctionnement d’un réseau d’entreprise et participation à la maintenance du parc informatique.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-item-content">
-          <div class="date">Mai 2024 - Juin 2024</div>
-          <strong>Stagiaire - 3iL Ingénieurs | Limoges</strong>
-          <p>Travail sur des outils web et apprentissage de pratiques de cybersécurité dans un environnement académique.</p>
+        <div class="timeline-item">
+          <div class="timeline-item-content">
+            <div class="date">Mai 2024 - Juin 2024</div>
+            <strong>Stagiaire - 3iL Ingénieurs | Limoges</strong>
+            <p>Travail sur des outils web et apprentissage de pratiques de cybersécurité dans un environnement académique.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="timeline-item">
-        <div class="timeline-item-content">
-          <div class="date">Janvier 2025 - Février 2025</div>
-          <strong>Stagiaire - ChevalierB.fr | Limoges</strong>
-          <p>Participation à la mise en place de solutions de sécurité, maintenance de serveurs et développement web.</p>
+        <div class="timeline-item">
+          <div class="timeline-item-content">
+            <div class="date">Janvier 2025 - Février 2025</div>
+            <strong>Stagiaire - ChevalierB.fr | Limoges</strong>
+            <p>Participation à la mise en place de solutions de sécurité, maintenance de serveurs et développement web.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-    <footer class="footer">
+  <!-- === FOOTER === -->
+  <footer class="footer">
     <div class="footer-content">
-        <div class="logo">
+      <div class="logo">
         <i class="fas fa-shield-alt"></i>
         <span><strong>Kyllian.Dev</strong></span>
-        </div>
-
-        <div class="footer-links">
+      </div>
+      <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
         <a href="#">Politique de cookies</a>
         <a href="#">Mentions légales</a>
-        </div>
-
-        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
+      </div>
+      <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
-    </footer>
+  </footer>
 </body>
 </html>
