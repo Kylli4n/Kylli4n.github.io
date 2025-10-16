@@ -12,6 +12,8 @@
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     transition: background 0.3s ease;
+    z-index: 1500;
+
 }
 
 .navbar:hover {
@@ -80,16 +82,20 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
-    gap: 4px;
+    gap: 5px;
+    position: relative;
+    z-index: 2000; /* toujours au-dessus du menu et du contenu */
+    margin-right: 10px; /* espace avec le bord droit */
 }
 
 .menu-toggle span {
-    background: #fff;
+    background: #ffffff; /* plus visible sur fond sombre */
     height: 3px;
-    width: 25px;
+    width: 28px;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
+
 
 @media (max-width: 900px) {
     .navbar {

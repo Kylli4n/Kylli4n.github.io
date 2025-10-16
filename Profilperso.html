@@ -249,14 +249,19 @@
   </div>
 
   <!-- Script JS menu responsive -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-  </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        if (menuToggle && menu) {
+            menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            menuToggle.classList.toggle("active");
+            });
+        }
+        });
+    </script>
 
   <!-- === CONTENU PRINCIPAL === -->
   <div class="page-content">

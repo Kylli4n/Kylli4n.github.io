@@ -197,15 +197,20 @@
     <a class="contact" href="Contact.html">Contact</a>
   </div>
 
-  <!-- Menu responsive -->
-  <script>
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    menuToggle.addEventListener('click', () => {
-      menu.classList.toggle('active');
-      menuToggle.classList.toggle('active');
-    });
-  </script>
+  <!-- Script JS menu responsive -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
+
+        if (menuToggle && menu) {
+            menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            menuToggle.classList.toggle("active");
+            });
+        }
+        });
+    </script>
 
   <!-- Section Contact -->
   <div class="contact-container">

@@ -247,14 +247,18 @@
         <a class="contact" href="Contact.html">Contact</a>
     </div>
 
-    <!-- Script menu responsive -->
+    <!-- Script JS menu responsive -->
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+        document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menu-toggle");
+        const menu = document.getElementById("menu");
 
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+        if (menuToggle && menu) {
+            menuToggle.addEventListener("click", () => {
+            menu.classList.toggle("active");
+            menuToggle.classList.toggle("active");
+            });
+        }
         });
     </script>
 
