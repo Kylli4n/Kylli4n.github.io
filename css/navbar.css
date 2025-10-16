@@ -97,39 +97,6 @@
 }
 
 
-@media (max-width: 1024px) {
-    .navbar {
-        padding: 10px 20px;
-    }
-
-    .navbar ul {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: rgba(13, 13, 13, 0.98);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        transform: translateY(-100%);
-        transition: transform 0.4s ease;
-    }
-
-    .navbar ul.active {
-        transform: translateY(0);
-    }
-
-    .menu-toggle {
-        display: flex; /* visible sur tablette et mobile */
-    }
-
-    .navbar .contact {
-        display: none;
-    }
-}
-
 /* Animation du menu burger */
 .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translateY(8px);
