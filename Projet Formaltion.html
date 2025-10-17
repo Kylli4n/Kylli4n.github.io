@@ -1,335 +1,348 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets Formation</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/footer.css" />
-    <link rel="stylesheet" href="css/responsible.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-        width: 90%;
-        margin: 0 auto;
-        padding: 20px 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 40px;
-        justify-content: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets Formation</title>
 
-        .project {
-            flex: 0 1 calc(25% - 30px); /* deux projets par ligne */
-            background-color: #2c2c2c;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255,255,255,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsible.css" />
 
-        .project img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #111111);
+      color: #e6e6e6;
+      overflow-x: hidden;
+    }
 
-        .project-info h2 {
-            font-family: 'Pacifico', cursive;
-            font-size: 2em;
-            margin: 10px 0 5px;
-        }   
+    /* Effet fond lumineux */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, rgba(0,166,255,0.15), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(255,61,61,0.15), transparent 60%);
+      z-index: -1;
+    }
 
-        .project-info h3 {
-            font-size: 1.2em;
-            margin: 0 0 10px;
-        }
-        .titre-anim {
-            font-size: 3em;
-            text-align: center;
-            background: linear-gradient(90deg, #ff0000, #ffffff, #ff0000);
-            background-size: 200% auto;
-            color: #fff;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
-            font-family: 'Orbitron', sans-serif;
-            margin-bottom: 10px;
-        }
+    /* Section titre */
+    .header-section {
+      width: 90%;
+      margin: 60px auto 40px auto;
+    }
 
-        @keyframes shine {
-            0% {
-                background-position: 200% center;
-            }
-            100% {
-                background-position: -200% center;
-            }
-        }
-        .project-year {
-            font-size: 0.95em;
-            color: #bbbbbb;
-            margin: 8px 0;
-            font-style: italic;
-        }
-        .button:hover {
-            background-color: hsl(0, 0%, 50%);
-            color: #fff;
-            box-shadow: none;
-        }
+    .titre-anim {
+      font-size: 3em;
+      text-align: left;
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d, #9a66ff);
+      background-size: 300% auto;
+      color: #fff;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 6s ease infinite;
+      font-family: 'Orbitron', sans-serif;
+      margin-bottom: 15px;
+    }
 
-        /* Nouveau style des boutons */
-        .button {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 17px;
-            padding: 1ch 2ch;
-            background: linear-gradient(45deg, #ff0000, #000000); /* Dégradé rouge -> noir */
-            color: #fff;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            transition: background 0.3s ease, transform 0.2s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
-        }
-        .button:hover {
-            background: linear-gradient(45deg, #cc0000, #1a1a1a); /* teinte plus sombre au hover */
-            transform: scale(1.05);
-        }
-        .project-details {
-            display: none;
-            margin-top: 15px;
-            text-align: left;
-            font-size: 0.95em;
-            color: #dddddd;
-        }
+    .description {
+      font-size: 1.2em;
+      color: #ccc;
+      text-align: left;
+      max-width: 800px;
+      line-height: 1.6;
+      margin-top: 5px;
+      margin-left: 5px;
+    }
 
-        .toggle-button {
-            margin-top: 10px;
-            padding: 0.5em 1em;
-            background-color: #444;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Orbitron', sans-serif;
-            transition: background 0.3s ease;
-        }
+    @keyframes gradientMove {
+      0% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+      100% { background-position: 0% center; }
+    }
 
-        .toggle-button:hover {
-            background-color: #666;
-        }
+    /* Conteneur principal */
+    .container {
+      width: 90%;
+      margin: 0 auto 80px auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+    }
 
+    .project {
+      flex: 0 1 calc(25% - 30px);
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #333;
-            margin: 40px 0;
-        }
-    </style>
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0, 166, 255, 0.4);
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .project-info h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6em;
+      margin: 10px 0 5px;
+      color: #fff;
+    }
+
+    .project-info h3 {
+      font-size: 1.2em;
+      margin: 0 0 10px;
+      color: #00a6ff;
+    }
+
+    .project-year {
+      font-size: 0.95em;
+      color: #bbbbbb;
+      margin: 8px 0;
+      font-style: italic;
+    }
+
+    .button {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 15px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 166, 255, 0.6);
+    }
+
+    .toggle-button {
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+      border: none;
+      padding: 8px 16px;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255, 61, 61, 0.5);
+    }
+
+    .project-details {
+      display: none;
+      margin-top: 15px;
+      text-align: left;
+      font-size: 0.95em;
+      color: #dddddd;
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(10, 10, 10, 0.95);
+      color: #bbb;
+      text-align: center;
+      padding: 30px 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer a {
+      color: #00a6ff;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #ff3d3d;
+    }
+  </style>
 </head>
+
 <body>
-       <!-- Navbar -->
-    <div class="navbar">
-         <img alt="Kyllian-Dev Logo" src="images/logo port.png" height="75px"/>
 
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+  <!-- Navbar -->
+  <div class="navbar">
+    <img alt="Kyllian-Dev Logo" src="images/logo port.png" height="75px"/>
 
-        <ul id="menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
-            <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
-            <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
-            <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
-            <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-            <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
-        </ul>
-
-        <a class="contact" href="Contact.html">Contact</a>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <!-- Script JS menu responsive -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-        const menuToggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
+    <ul id="menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+      <li><a href="Profilperso.html"><i class="fas fa-user"></i> Profil</a></li>
+      <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
+      <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
+      <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+      <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+    </ul>
 
-        if (menuToggle && menu) {
-            menuToggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-            menuToggle.classList.toggle("active");
-            });
-        }
+    <a class="contact" href="Contact.html">Contact</a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      if (menuToggle && menu) {
+        menuToggle.addEventListener("click", () => {
+          menu.classList.toggle("active");
+          menuToggle.classList.toggle("active");
         });
-    </script>
+      }
+    });
+  </script>
 
-    
-    <div class="container">
-        <h1 class="titre-anim">Mes projets</h1>
-        <p class="description">Ci-dessous vous retrouverez tous mes anciens projets de ma formation réalisés à ce jour.</p>
-    
-        
-        <div class="project">            
-            <div class="project-info">
-                <h3>01</h3>
-                <h2>Brocant'art</h2>
-                <p class="project-year">Première année</p> <!-- Ajout de l'année -->
-                <a href="" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a>                
-            </div>
-        </div>
+  <!-- Section titre -->
+  <div class="header-section">
+    <h1 class="titre-anim">Mes projets</h1>
+    <p class="description">
+      Ci-dessous vous retrouverez tous mes anciens projets de ma formation réalisés à ce jour.
+    </p>
+  </div>
 
-        <div class="project">
-            <div class="project-info">
-                <h3>02</h3>
-                <h2>Projet Club Photo</h2>
-                <p class="project-year">Première année</p>
-                <a href="Documents/Documentation technique CLUB PHOTO (1).pdf" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a>
-                <button class="toggle-button">Voir plus</button>
-            </div>
-            <div class="project-details">
-                <p><strong>Objectif :</strong> Développer une interface web pour le Club Photo de Limoges, permettant la gestion des articles, des photos, et des informations des photographes</p>
-                <p><strong>Compétences mobilisées :</strong></p>
-                <ul>
-                    <li><strong>B1.1</strong> Gérer le patrimoine informatique : mise en place d'une BDD, code structuré</li>
-                    <li><strong>B1.2</strong> Répondre aux incidents : correction d’erreurs SQL</li>
-                    <li><strong>B1.3</strong> Développer la présence en ligne : site attrayant et fonctionnel</li>
-                    <li><strong>B1.4 </strong> Travailler en mode projet : gestion par étapes, documentation</li>
-                    <li><strong>B1.6</strong> Développement professionnel : montée en compétences PHP, SQL, sécurité etc</li>
-                </ul>
-                <p><strong>Résultat :</strong> J’ai livré une application web qui permet aux membres du club de gérer facilement les photos et articles, et d’administrer les informations des photographes. J’ai appris à concevoir une application multi-parties (gestion d’éléments liés entre eux), à sécuriser les interactions utilisateurs/base de données, et à proposer une navigation fluide. Parmi les principales difficultés : assurer la cohérence des liens entre les modules (photos, articles, photographes) et éviter les failles SQL.</p>
-            </div>
-        </div>
-        
-
-        <div class="project">            
-            <div class="project-info">
-                <h3>03</h3>
-                <h2>Projet Karate</h2>
-                <p class="project-year">Première année</p> <!-- Ajout de l'année -->
-                <a href="" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a> 
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-info">
-                <h3>04</h3>
-                <h2>Projet Séminaire</h2>
-                <p class="project-year">Deuxième année</p> <!-- Ajout de l'année -->
-                <a href="" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a> 
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-info">
-                <h3>05</h3>
-                <h2>Projet Congrès</h2>
-                <p class="project-year">Deuxième année</p> <!-- Ajout de l'année -->
-                <a href="Documents/Fiche de Documentation Techniqu1.pdf" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a> 
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-info">
-                <h3>06</h3>
-                <h2>Projet Bibliothèque</h2>
-                <p class="project-year">Deuxième année</p>
-                <a href="Documents/Fiche de Documentation Technique.pdf" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a>
-                <button class="toggle-button">Voir plus</button>
-            </div>
-            <div class="project-details">
-                <p><strong>Objectif :</strong> Développer une application mobile multiplateforme (Flutter/Dart) pour gérer le catalogue d’une bibliothèque. L’application permet aux bibliothécaires d’ajouter, modifier, supprimer et consulter les livres et auteurs, avec une synchronisation en temps réel via Firebase.</p>
-                <p><strong>Compétences mobilisées :</strong></p>
-                <ul>
-                    <li><strong>B1.1</strong> Gérer le patrimoine informatique : gestion de la base de données Firebase, structuration des entités (livres, auteurs) et mise en place des règles de sécurité.</li>
-                    <li><strong>B1.3</strong> Développer la présence en ligne : création d’une interface intuitive et responsive pour renforcer l’image numérique de la bibliothèque.</li>
-                    <li><strong>B1.4</strong> Travailler en mode projet : adoption de l’architecture MVVM, planification des développements et usage de Git pour le versioning.</li>
-                    <li><strong>B1.6</strong> Organiser son développement professionnel : montée en compétences sur Flutter, Firebase et les tests d’application mobile.</li>
-                </ul>
-                <p><strong>Résultat :</strong> J’ai réalisé une application fonctionnelle testée sur simulateur et appareils physiques, capable de gérer les ressources en temps réel. J’ai appris à structurer un projet mobile complexe, à configurer une authentification sécurisée et à anticiper les besoins de déploiement multi-plateforme. Les principales difficultés ont été liées à la synchronisation en temps réel et à la configuration des règles Firebase.</p>
-            </div>
-        </div>
-        
-
-        <div class="project">
-            <div class="project-info">
-                <h3>07</h3>
-                <h2>Projet jardinier</h2>
-                <p class="project-year">Deuxième année</p> <!-- Ajout de l'année -->
-                <a href="Documents/Projet Jardinier documentation.pdf" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a> 
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-info">
-                <h3>08</h3>
-                <h2>Projet Resto</h2>
-                <p class="project-year">Première année</p> <!-- Ajout de l'année -->
-                <a href="" target="_blank" class="button">
-                    LIRE <i class="fas fa-arrow-right"></i>
-                </a> 
-            </div>
-        </div>
-
+  <!-- Section projets -->
+  <div class="container">
+    <div class="project">
+      <div class="project-info">
+        <h3>01</h3>
+        <h2>Brocant'art</h2>
+        <p class="project-year">Première année</p>
+        <a href="" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <div class="project">
+      <div class="project-info">
+        <h3>02</h3>
+        <h2>Projet Club Photo</h2>
+        <p class="project-year">Première année</p>
+        <a href="Documents/Documentation technique CLUB PHOTO (1).pdf" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+        <button class="toggle-button">Voir plus</button>
+      </div>
+      <div class="project-details">
+        <p><strong>Objectif :</strong> Développer une interface web pour le Club Photo de Limoges, permettant la gestion des articles, des photos, et des informations des photographes.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-info">
+        <h3>03</h3>
+        <h2>Projet Karate</h2>
+        <p class="project-year">Première année</p>
+        <a href="" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-info">
+        <h3>04</h3>
+        <h2>Projet Séminaire</h2>
+        <p class="project-year">Deuxième année</p>
+        <a href="" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-info">
+        <h3>05</h3>
+        <h2>Projet Congrès</h2>
+        <p class="project-year">Deuxième année</p>
+        <a href="Documents/Fiche de Documentation Techniqu1.pdf" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-info">
+        <h3>06</h3>
+        <h2>Projet Bibliothèque</h2>
+        <p class="project-year">Deuxième année</p>
+        <a href="Documents/Fiche de Documentation Technique.pdf" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+        <button class="toggle-button">Voir plus</button>
+      </div>
+      <div class="project-details">
+        <p><strong>Objectif :</strong> Développer une application mobile multiplateforme (Flutter/Dart) pour gérer le catalogue d’une bibliothèque.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-info">
+        <h3>07</h3>
+        <h2>Projet jardinier</h2>
+        <p class="project-year">Deuxième année</p>
+        <a href="Documents/Projet Jardinier documentation.pdf" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-info">
+        <h3>08</h3>
+        <h2>Projet Resto</h2>
+        <p class="project-year">Première année</p>
+        <a href="" target="_blank" class="button">LIRE <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
     <div class="footer-content">
-        <div class="logo">
+      <div class="logo">
         <i class="fas fa-shield-alt"></i>
         <span><strong>Kyllian.Dev</strong></span>
-        </div>
-
-        <div class="footer-links">
+      </div>
+      <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
-        <a href="#">Politique de cookies</a>
+        <a href="#">Cookies</a>
         <a href="#">Mentions légales</a>
-        </div>
-
-        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
+      </div>
+      <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
-    </footer>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.toggle-button').forEach(button => {
+      button.addEventListener('click', () => {
+        const details = button.parentElement.nextElementSibling;
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        button.textContent = details.style.display === 'block' ? 'Voir moins' : 'Voir plus';
+      });
+    });
+  </script>
+
 </body>
 </html>
-<script>
-    document.querySelectorAll('.toggle-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const details = button.parentElement.nextElementSibling;
-            details.style.display = details.style.display === 'block' ? 'none' : 'block';
-            button.textContent = details.style.display === 'block' ? 'Voir moins' : 'Voir plus';
-        });
-    });
-</script>

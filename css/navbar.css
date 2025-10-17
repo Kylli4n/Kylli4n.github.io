@@ -84,9 +84,11 @@
     cursor: pointer;
     gap: 5px;
     position: relative;
-    z-index: 2000; /* toujours au-dessus du menu et du contenu */
-    margin-right: 10px; /* espace avec le bord droit */
+    z-index: 2000;
+    margin-right: 25px; /* augmente la marge intérieure */
+    margin-left: auto; /* garde le bouton bien aligné à droite sans le coller */
 }
+
 
 .menu-toggle span {
     background: #ffffff; /* plus visible sur fond sombre */

@@ -7,6 +7,7 @@
 
   <!-- Icônes et polices -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/navbar.css" />
   <link rel="stylesheet" href="css/footer.css" />
   <link rel="stylesheet" href="css/responsible.css" />
@@ -16,94 +17,113 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      color: #ddd;
-      background-color: #0d0d0d;
+      color: #e5e5e5;
+      background: linear-gradient(120deg, #0a0a0a, #141414);
       overflow-x: hidden;
     }
 
-    /* === ESPACE SOUS NAVBAR === */
-    .page-content {
-      margin-top: 100px; /* Décale tout le contenu sous la navbar fixe */
-    }
-
-    /* === FOND DYNAMIQUE === */
+    /* === FOND ANIMÉ === */
     .background {
       position: fixed;
-      top: 100px; /* Décalé pour ne pas passer sous la navbar */
+      top: 0;
+      left: 0;
       width: 100%;
-      height: calc(100vh - 100px);
-      background: linear-gradient(45deg, #ff0000, #000000, #ff0000, #000000);
+      height: 100%;
+      background: linear-gradient(-45deg, #000000, #1a1a1a, #0d0d0d, #000000);
       background-size: 400% 400%;
-      animation: gradientAnimation 5s ease infinite;
+      animation: gradientShift 10s ease infinite;
       z-index: -1;
     }
 
-    @keyframes gradientAnimation {
+    @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
+    /* === PAGE CONTENT === */
+    .page-content {
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    /* === ANIMATIONS GLOBALES === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* === CARTE PROFIL === */
     .profile-card {
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 25px;
-      width: 320px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255,0,0,0.3);
-      text-align: left;
       margin: 0 auto;
-      top: 60px;
+      width: 340px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(0, 166, 255, 0.2);
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(255, 61, 61, 0.4);
     }
 
     .profile-card h1 {
-      margin: 0;
       font-size: 26px;
-      color: #fff;
+      margin-bottom: 5px;
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .profile-card h2 {
-      margin: 5px 0;
-      font-size: 16px;
-      font-weight: normal;
-      color: #ff3b3b;
+      font-size: 15px;
+      color: #bbb;
+      margin-bottom: 15px;
     }
 
     .profile-card p {
-      margin: 10px 0;
       font-size: 14px;
-      color: #ccc;
+      line-height: 1.6;
+      margin: 10px 0;
     }
 
-    /* === BOUTON CV === */
     .cv-button {
       display: inline-block;
-      margin-top: 10px;
-      background-color: #ff0000;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 5px;
+      margin-top: 15px;
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 14px;
-      transition: background 0.3s ease;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .cv-button:hover {
-      background-color: #cc0000;
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px rgba(0, 166, 255, 0.5);
     }
 
-    /* === SECTION À PROPOS === */
+    /* === À PROPOS === */
     .about-me {
-      text-align: center;
-      padding: 30px;
-      background-color: #111;
-      color: #fff;
+      margin: 80px auto 40px;
       width: 80%;
-      margin: 80px auto 20px;
-      border-left: 5px solid #ff0000;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255,0,0,0.3);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 61, 61, 0.15);
       transition: transform 0.3s ease;
     }
 
@@ -112,41 +132,44 @@
     }
 
     .about-me h1 {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 15px;
-      color: #ff3b3b;
+      font-size: 32px;
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
     }
 
     .about-me p {
       font-size: 16px;
-      margin: 10px 0;
-      line-height: 1.6;
+      color: #ccc;
+      line-height: 1.7;
     }
 
     /* === TIMELINE === */
     .timeline-container {
       position: relative;
-      background-color: #1a1a1a;
-      color: #fff;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 50px 0;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .timeline-container h1 {
-      font-size: 32px;
       text-align: center;
-      margin-bottom: 20px;
-      color: #ff3b3b;
+      font-size: 30px;
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 40px;
     }
 
     .timeline {
-      position: relative;
+      max-width: 800px;
       margin: 0 auto;
-      padding: 10px 0;
-      width: 80%;
+      position: relative;
     }
 
+    /* === LIGNE CENTRALE AVEC ANIMATION === */
     .timeline::before {
       content: '';
       position: absolute;
@@ -154,80 +177,94 @@
       bottom: 0;
       left: 50%;
       width: 2px;
-      background: #fff;
+      background: linear-gradient(180deg, #00a6ff, #ff3d3d, #00a6ff);
+      background-size: 100% 300%;
+      animation: flowDown 6s linear infinite;
+      transform: translateX(-50%);
     }
 
-    .timeline-item {
-      position: relative;
-      margin: 20px 0;
-      padding-left: 50%;
-      clear: both;
+    @keyframes flowDown {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 0% 100%; }
+      100% { background-position: 0% 0%; }
     }
 
+    /* POINT CENTRAL SUR LA LIGNE */
     .timeline-item::before {
       content: '';
       position: absolute;
+      top: 25px;
       left: 50%;
-      width: 20px;
-      height: 20px;
+      transform: translateX(-50%);
+      width: 14px;
+      height: 14px;
+      background: linear-gradient(90deg, #00a6ff, #ff3d3d);
       border-radius: 50%;
-      background: #ff3b3b;
-      margin-left: -10px;
-      top: 10px;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(255, 61, 61, 0.6);
+    }
+
+    .timeline-item {
+      margin: 40px 0;
+      position: relative;
     }
 
     .timeline-item-content {
-      padding: 15px 20px;
-      background: #222;
-      border-left: 4px solid #ff0000;
-      border-radius: 5px;
-      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
       width: 45%;
-      left: 10px;
+      color: #eee;
+      position: relative;
       transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(0, 166, 255, 0.2);
     }
 
     .timeline-item-content:hover {
-      background: #2c2c2c;
-      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-3px);
     }
 
-    .timeline-item-content .date {
+    /* CARTES ALTERNÉES GAUCHE / DROITE */
+    .timeline-item:nth-child(odd) .timeline-item-content {
+      left: 0;
+      border-left: 3px solid #00a6ff;
+    }
+
+    .timeline-item:nth-child(even) .timeline-item-content {
+      left: 55%;
+      border-right: 3px solid #ff3d3d;
+    }
+
+    .timeline-item .date {
       font-size: 14px;
-      color: #ccc;
-      margin-bottom: 5px;
+      color: #bbb;
+      margin-bottom: 8px;
     }
 
-    .timeline-item-content p {
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    /* === RESPONSIVE === */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .timeline::before {
-        left: 5px;
+        left: 8px;
       }
 
-      .timeline-item {
-        padding-left: 30px;
+      .timeline-item::before {
+        left: 14px;
       }
 
       .timeline-item-content {
         width: 90%;
-        left: 0;
-      }
-
-      .profile-card {
-        width: 90%;
-        top: 20px;
+        left: 30px !important;
+        border: none !important;
+        border-left: 3px solid #00a6ff !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- === NAVBAR === -->
+  <div class="background"></div>
+  <!-- Navbar -->
   <div class="navbar">
     <img alt="Kyllian-Dev Logo" src="images/logo port.png" height="75px"/>
 
@@ -243,32 +280,27 @@
       <li><a href="BtsSio.html"><i class="fas fa-graduation-cap"></i> BTS SIO</a></li>
       <li><a href="Competence.html"><i class="fas fa-cogs"></i> Compétences</a></li>
       <li><a href="Projet.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
-      <li><a href="Veille technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
+      <li><a href="Veillle technologique.html"><i class="fas fa-lightbulb"></i> Veille</a></li>
     </ul>
 
     <a class="contact" href="Contact.html">Contact</a>
   </div>
 
-  <!-- Script JS menu responsive -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-        const menuToggle = document.getElementById("menu-toggle");
-        const menu = document.getElementById("menu");
-
-        if (menuToggle && menu) {
-            menuToggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-            menuToggle.classList.toggle("active");
-            });
-        }
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("menu");
+      if (menuToggle && menu) {
+        menuToggle.addEventListener("click", () => {
+          menu.classList.toggle("active");
+          menuToggle.classList.toggle("active");
         });
-    </script>
+      }
+    });
+  </script>
 
-  <!-- === CONTENU PRINCIPAL === -->
   <div class="page-content">
-    <div class="background"></div>
-
-    <div class="profile-card">
+    <div class="profile-card fade-in">
       <h1>Kyllian Chrétien</h1>
       <h2>Développeur & passionné de cybersécurité</h2>
       <p><strong>Téléphone</strong><br>06 ** ** ** 17</p>
@@ -277,23 +309,19 @@
       <a class="cv-button" href="Documents/Kyllian Chrétien nouvelle Version.pdf" download>📄 Télécharger mon CV</a>
     </div>
 
-    <div class="about-me">
+    <div class="about-me fade-in">
       <h1>À propos de moi</h1>
-      <p>
-        Je m’appelle <strong>Kyllian Chrétien</strong>, passionné d’informatique depuis plusieurs années.  
-        Issu d’une formation en <strong>BTS SIO</strong>, j’ai acquis de solides compétences en <strong>développement web</strong>, <strong>administration réseau</strong> et <strong>sécurité informatique</strong>.
-      </p>
-      <p>
-        Aujourd’hui, je poursuis mon apprentissage à travers des <strong>projets personnels</strong> et une <strong>veille technologique</strong> active autour de la <strong>cybersécurité</strong>.  
-        Mon objectif est de rejoindre une entreprise où je pourrai continuer à progresser, participer à des projets concrets et renforcer mon expertise technique.
-      </p>
-      <p>
-        Curieux, rigoureux et persévérant, j’aime relever de nouveaux défis et apprendre en continu.  
-        Chaque expérience, qu’elle soit académique, professionnelle ou personnelle, nourrit ma passion pour les technologies et la sécurité numérique.
-      </p>
+      <p>Je m’appelle <strong>Kyllian Chrétien</strong>, passionné d’informatique depuis plusieurs années.  
+      Issu d’une formation en <strong>BTS SIO</strong>, j’ai acquis de solides compétences en <strong>développement web</strong>, <strong>administration réseau</strong> et <strong>sécurité informatique</strong>.</p>
+
+      <p>Aujourd’hui, je poursuis mon apprentissage à travers des <strong>projets personnels</strong> et une <strong>veille technologique</strong> active autour de la <strong>cybersécurité</strong>.  
+      Mon objectif est de rejoindre une entreprise où je pourrai continuer à progresser et renforcer mon expertise technique.</p>
+
+      <p>Curieux, rigoureux et persévérant, j’aime relever de nouveaux défis et apprendre en continu.</p>
     </div>
 
-    <div class="timeline-container">
+    <!-- === TIMELINE === -->
+    <div class="timeline-container fade-in">
       <h1>Expérience professionnelle</h1>
       <div class="timeline">
         <div class="timeline-item">
@@ -323,20 +351,34 @@
     </div>
   </div>
 
-  <!-- === FOOTER === -->
-  <footer class="footer">
+  <!-- Footer -->
+    <footer class="footer">
     <div class="footer-content">
-      <div class="logo">
+        <div class="logo">
         <i class="fas fa-shield-alt"></i>
         <span><strong>Kyllian.Dev</strong></span>
-      </div>
-      <div class="footer-links">
+        </div>
+
+        <div class="footer-links">
         <a href="#">Politique de confidentialité</a>
         <a href="#">Politique de cookies</a>
         <a href="#">Mentions légales</a>
-      </div>
-      <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
+        </div>
+
+        <p>© 2025 Kyllian.Dev — Tous droits réservés.</p>
     </div>
-  </footer>
+    </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.2 });
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
